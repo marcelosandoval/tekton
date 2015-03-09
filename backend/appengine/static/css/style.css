@@ -1,0 +1,24 @@
+.login-block {
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #000876 2px;
+}
+
+.item-block {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #a39f02 2px;
+}
+.rodape{
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+.pad {
+    padding: 5px;
+    margin: 0px;
+}
