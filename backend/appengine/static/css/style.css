@@ -1,13 +1,33 @@
 .login-block {
     padding: 10px;
     border-radius: 10px;
+    background-color: #92d4ff;
     border: solid #000876 2px;
+}
+.titulo-draven{
+    font-size: 400%;
+}
+.apres-draven{
+    color: #ffffff;
+    font-size: x-large;
+}
+.container{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.bloco-draven{
+    color: #ffffff;
+    background: rgba(217, 217, 217, 0.2);
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .item-block {
     margin: 5px;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 2px;
+    border-radius: 2px;
+    background-color: #ececec;
     border: solid #a39f02 2px;
 }
 .rodape{
@@ -21,4 +41,13 @@
 .pad {
     padding: 5px;
     margin: 0px;
+}
+
+.sem_margb{
+    margin-bottom: 0px
+}
+
+body {
+    background: url(/static/img/freljord.png) no-repeat center top;
+    background-color: #020202;
 }
