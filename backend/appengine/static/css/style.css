@@ -37,14 +37,46 @@
     text-align: center;
 
 }
-
+.container-full {
+    margin-top: 20px;
+    padding: 2px;
+    border-radius: 2px;
+    background-color: #ececec;
+    border: solid #a39f02 2px;
+}
+.barra-pesquisa{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: black;
+    color: white;
+}
 .pad {
     padding: 5px;
     margin: 0px;
 }
-
+.img-mid{
+    float: left;
+}
+.img-hab{
+    width: 75px;
+}
 .sem_margb{
     margin-bottom: 0px
+}
+
+.texto_desc{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.aj_img_hab{
+    margin-top: 20px;
+}
+.guia_texto{
+
+    margin: 5px;
+    padding: 2px;
 }
 
 body {

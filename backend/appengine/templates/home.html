@@ -1,50 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>League of Draven</title>
+{% extends 'base/base.html'%}
 
-
-	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<script type="text/javascript" src="/static/jquery/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-<nav class="navbar navbar-default navbar-inverse navbar-static-top sem_margb" role="navigation">
-				<div class="navbar-header">
-					 <a class="navbar-brand" href="#"><img alt="League of Legends logo" src="/static/img/lod-logo.png" width="226" height="123" style="margin-top: -25px; margin-left: -15px"></a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">Página Inicial</a>
-						</li>
-
-					</ul>
-					<form class="navbar-form navbar-right" id="form" role="search">
-						<div class="form-group ">
-							<input type="text" class="form-control">
-                            <select class="form-control" form="form">
-                                <option value="campeao">Campeão</option>
-                                <option value="item">Item</option>
-                                <option value="criatura">Criatura</option>
-                            </select>
-						</div>
-                        <button type="submit" class="btn btn-default">Pesquisar</button>
-					</form>
-
-				</div>
-
-			</nav>
+{% block body %}
 <div class="container">
-	<div class="row clearfix">
-		<div class="col-sm-12 column">
-
-		</div>
-	</div>
 	<div class="row clearfix">
 		<div class="col-sm-3 column" align="center">
 			<img alt="600x650" src="/static/img/draven-soulreaper.png" class="img-mid img-responsive" style="margin-top: 200px">
@@ -75,10 +32,10 @@
 		                <div class="col-sm-12 column"><button type="submit" class="btn btn-info btn-block">Submit</button></div>
                     </div>
 	                <div class="row clearfix pad" align="center">
-		                <div class="col-sm-12 column"><a class="btn" href="#">Esqueci minha senha</a></div>
+		                <div class="col-sm-12 column"><a class="btn" href="/alterar_senha">Esqueci minha senha</a></div>
                     </div>
 	                <div class="row clearfix pad" align="center">
-		                <div class="col-sm-12 column"><a class="btn" href="#">Realizar cadastro</a></div>
+		                <div class="col-sm-12 column"><a class="btn" href="/cadastro">Realizar cadastro</a></div>
                     </div>
 
 
@@ -106,7 +63,7 @@
                         assim como varias informações e curiosidades.
 					</p>
 					<p>
-						<a class="btn" href="#">Ir para a página de campeões »</a>
+						<a class="btn" href="/campeao">Ir para a página de campeões »</a>
 					</p>
 				</div>
 			</div>
@@ -132,7 +89,7 @@
                         ações dentro da partida. Aqui estão disponiveis todas as informações em relação aos itens.
                     </p>
 					<p>
-						<a class="btn" href="#">Ir para a página de itens »</a>
+						<a class="btn" href="/item">Ir para a página de itens »</a>
 					</p>
 				</div>
 			</div>
@@ -158,7 +115,7 @@
                         por entre a selva  e garantindo grando objetivos.
                     </p>
 					<p>
-						<a class="btn" href="#">Ir para a página de criaturas »</a>
+						<a class="btn" href="/criatura">Ir para a página de criaturas »</a>
 					</p>
 				</div>
 			</div>
@@ -184,7 +141,7 @@
                         e aprendendo macetes, taticas, builds, runas e talentos que possam ajudar seu desempenho.
                     </p>
 					<p>
-						<a class="btn" href="#">Ir para a página de guias »</a>
+						<a class="btn" href="/guia">Ir para a página de guias »</a>
 					</p>
 				</div>
 			</div>
@@ -193,10 +150,4 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-    <div class="col-sm-12 rodape">
-        Projeto de Script - Marcelo Augusto Sandoval - 5ºADS - manhã - 1º semestre 2015
-    </div>
-</div>
-</body>
-</html>
+{% endblock %}

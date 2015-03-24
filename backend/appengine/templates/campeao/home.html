@@ -1,0 +1,100 @@
+{% extends 'base/base.html'%}
+{% block tComp %} - Campeões{% endblock %}
+
+
+{% block body %}
+<div class="container container-full">
+
+	<div class="row clearfix">
+				<div class="col-sm-3 col-sm-offset-1">
+					<img alt="140x140" src="/static/img/champions.png" class="img-mid img-responsive">
+				</div>
+				<div class="col-sm-7 column">
+					<h2>
+						Campeões
+					</h2>
+					<p>
+                        Veja informações e dados sobre os campeões de League of Legends, sempre atualizados com o último
+                        patch do servidor live. Aqui se encontram os atributos dos campões, descrições de suas habilidades,
+                        assim como varias informações e curiosidades.
+					</p>
+				</div>
+	</div>
+
+            <form name="campeao" id="campeao">
+	            <div class="row clearfix barra-pesquisa form-group">
+                    <div class="col-sm-2 col-sm-offset-2">
+                        <select name="campeao_filtro" id="campeao_filtro" class="form-control" >
+                            <option value="nome" selected>Nome</option>
+                            <option value="papel">Papel</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" name="campeao_termo" id="campeao_termo" class="form-control">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-default">Pesquisar</button>
+                    </div>
+                </div>
+            </form>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="row item-block">
+				<div class="col-sm-3 column">
+					<a href="/campeao/show?nome=aatrox"><img alt="140x140" src="/static/img/portraits/aatrox.jpg"class="img-mid img-responsive"></a>
+				</div>
+				<div class="col-sm-9 column">
+					<h2><a href="/campeao/show?nome=aatrox">
+						Aatrox</a>
+					</h2>
+					<p>
+                        a Espada Darkin
+                    </p>
+				</div>
+			</div>
+            <div class="row item-block">
+				<div class="col-sm-3 column">
+					<a href="/campeao/show?nome=ahri"><img alt="140x140" src="/static/img/portraits/ahri.png" class="img-mid img-responsive"></a>
+				</div>
+				<div class="col-sm-9 column">
+					<h2><a href="/campeao/show?nome=ahri">
+						Ahri</a>
+					</h2>
+					<p>
+                        a Raposa de Nove Caudas
+                    </p>
+				</div>
+			</div>
+            <div class="row item-block">
+				<div class="col-sm-3 column">
+					<a href="/campeao/show?nome=akali"><img alt="140x140" src="/static/img/portraits/akali.png"class="img-mid img-responsive"></a>
+				</div>
+				<div class="col-sm-9 column">
+					<h2><a href="/campeao/show?nome=akali">
+						Akali</a>
+					</h2>
+					<p>
+                        o Punho das Sombras
+                    </p>
+				</div>
+			</div>
+            <div class="row item-block">
+				<div class="col-sm-3 column">
+					<a href="/campeao/show?nome=alistar"><img alt="140x140" src="/static/img/portraits/alistar.png" href="/campeao/alistar" class="img-mid img-responsive"></a>
+				</div>
+				<div class="col-sm-9 column">
+					<h2><a href="/campeao/show?nome=alistar">
+						Alistar</a>
+					</h2>
+					<p>
+                        o Minotauro
+                    </p>
+				</div>
+			</div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

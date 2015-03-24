@@ -10,17 +10,3 @@ from gaepermission.decorator import login_not_required
 def index():
     return TemplateResponse()
 
-@login_not_required
-@no_csrf
-def cadastro():
-    return TemplateResponse()
-
-@login_not_required
-@no_csrf
-def perfil():
-    return TemplateResponse()
-
-@login_not_required
-@no_csrf
-def alterar_senha():
-    return TemplateResponse()
