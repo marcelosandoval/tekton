@@ -1,8 +1,17 @@
 .login-block {
-    padding: 10px;
+    padding: 0px;
+    margin: 0px;
     border-radius: 10px;
-    background-color: #92d4ff;
+    background: rgba(0, 205, 232, 0.50);
     border: solid #000876 2px;
+    right: 0px;
+    position: absolute;
+    width: 15%;
+}
+.login-item{
+    margin: 0px;
+
+    padding: 0px;
 }
 .titulo-draven{
     font-size: 400%;
@@ -51,10 +60,6 @@
     padding-top: 3px;
     background-color: black;
     color: white;
-}
-.pad {
-    padding: 5px;
-    margin: 0px;
 }
 .img-mid{
     float: left;

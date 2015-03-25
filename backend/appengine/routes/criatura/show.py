@@ -7,6 +7,6 @@ from gaepermission.decorator import login_not_required
 
 @login_not_required
 @no_csrf
-def index(nome):
+def index(nome='none'):
     return TemplateResponse()
 

@@ -5,6 +5,7 @@
             <div class="col-md-12">
                 <div class="well">
                     <h1>{% trans %}File Upload Form{% endtrans %}</h1>
+
                     <form action="{{ upload_url }}" method="post" role="form" enctype="multipart/form-data">
                         {{ csrf_input() }}
                         <div class="form-group ">

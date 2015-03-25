@@ -1,84 +1,84 @@
-{% extends 'base/base.html'%}
+{% extends 'base/base.html' %}
 {% block tComp %} - Itens show{% endblock %}
 
-{%  block body %}
-<div class="container container-full">
+{% block body %}
+    <div class="container container-full">
 
 
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="row item-block">
+                    <div class="col-sm-3 column">
+                        <img alt="140x140" src="/static/img/itens.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-9 column">
+                        <h2>
+                            Nome do Item
+                        </h2><br>
 
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <div class="row item-block">
-				<div class="col-sm-3 column">
-					<img alt="140x140" src="/static/img/itens.png"class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-9 column">
-					<h2>
-                        Nome do Item
-					</h2><br>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Tipo:
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Tipo:
+                            </div>
+                            <div class="col-sm-9 column">
+                                Descrição
+                            </div>
                         </div>
-                        <div class="col-sm-9 column">
-                            Descrição
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Status:
+                            </div>
+                            <div class="col-sm-9 column">
+                                50 dano
+                                50 magia
+                            </div>
                         </div>
-                    </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Status:
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Passiva:
+                            </div>
+                            <div class="col-sm-9 column">
+                                Nome: Descrição<br>
+                                Nome: Descricao
+                            </div>
                         </div>
-                        <div class="col-sm-9 column">
-                            50 dano
-                            50 magia
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Ativa:
+                            </div>
+                            <div class="col-sm-9 column">
+                                Nome: Descrição
+                            </div>
                         </div>
-                    </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Passiva:
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Aura:
+                            </div>
+                            <div class="col-sm-9 column">
+                                Descrição
+                            </div>
                         </div>
-                        <div class="col-sm-9 column">
-                            Nome: Descrição<br>
-                            Nome: Descricao
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Valor de Compra:
+                            </div>
+                            <div class="col-sm-9 column">
+                                R$
+                            </div>
                         </div>
-                    </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Ativa:
-                        </div>
-                        <div class="col-sm-9 column">
-                            Nome: Descrição
-                        </div>
-                    </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Aura:
-                        </div>
-                        <div class="col-sm-9 column">
-                            Descrição
-                        </div>
-                    </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Valor de Compra:
-                        </div>
-                        <div class="col-sm-9 column">
-                            R$
-                        </div>
-                    </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-3 column">
-                            Valor de Venda:
-                        </div>
-                        <div class="col-sm-9 column">
-                            R$
+                        <div class="row texto_desc">
+                            <div class="col-sm-3 column">
+                                Valor de Venda:
+                            </div>
+                            <div class="col-sm-9 column">
+                                R$
+                            </div>
                         </div>
                     </div>
-				</div>
-			</div>
+                </div>
 
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 {% endblock %}

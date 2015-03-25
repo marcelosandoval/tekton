@@ -1,84 +1,75 @@
-{% extends 'base/base.html'%}
+{% extends 'base/baselista.html' %}
 {% block tComp %} - Criaturas{% endblock %}
 
-{% block body %}
-<div class="container container-full">
+{% block imagem %}<img alt="140x140" src="/static/img/creatures.png" class=" img-responsive">{% endblock %}
+{% block titulo %}Criaturas{% endblock %}
+{% block descricao %}
+    Para conseguir escalar seu poder dentro do jogo e garantir uma vitória você deve conhecer todas
+    as criaturas da selva, seus atributos, buffs e tempo de respawn, assim optimizando suas rotas
+    por entre a selva  e garantindo grando objetivos.
+{% endblock %}
 
-	<div class="row clearfix">
-				<div class="col-sm-3 col-sm-offset-1">
-					<img alt="140x140" src="/static/img/creatures.png" class=" img-responsive">
-				</div>
-				<div class="col-sm-7 column">
-					<h2>
-						Criaturas
-					</h2>
-					<p>
-                        Para conseguir escalar seu poder dentro do jogo e garantir uma vitória você deve conhecer todas
-                        as criaturas da selva, seus atributos, buffs e tempo de respawn, assim optimizando suas rotas
-                        por entre a selva  e garantindo grando objetivos.
-					</p>
-				</div>
-	</div>
 
-	            <div class="row clearfix barra-pesquisa">
-                    <div class="col-sm-2 col-sm-offset-2">
-                    </div>
+{% block Listagem %}
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
+
+            <div class="row item-block">
+                <div class="col-sm-3 column">
+                    <a href="/criatura/show?nome=melee"><img alt="140x140" src="/static/img/criaturas/melee.png"
+                                                             class="img-hab img-responsive"></a>
                 </div>
-
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-2">
-
-            <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/criatura/show?nome=melee"><img alt="140x140" src="/static/img/criaturas/melee.png"class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/criatura/show?nome=melee">
-						Corpo-a-corpo</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/criatura/show?nome=melee">
+                        Corpo-a-corpo</a>
+                    </h3>
+                </div>
+            </div>
         </div>
         <div class="col-sm-4">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/criatura/show?nome=mago"><img alt="140x140" src="/static/img/criaturas/mago.png" class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/criatura/show?nome=mago">
-						Mago</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-3 column">
+                    <a href="/criatura/show?nome=mago"><img alt="140x140" src="/static/img/criaturas/mago.png"
+                                                            class="img-hab img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/criatura/show?nome=mago">
+                        Mago</a>
+                    </h3>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-2">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/criatura/show?nome=azupora"><img alt="140x140" src="/static/img/criaturas/azupora.png"class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/criatura/show?nome=azupora">
-						Azuporã</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-3 column">
+                    <a href="/criatura/show?nome=azupora"><img alt="140x140" src="/static/img/criaturas/azupora.png"
+                                                               class="img-hab img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/criatura/show?nome=azupora">
+                        Azuporã</a>
+                    </h3>
+                </div>
+            </div>
         </div>
         <div class="col-sm-4">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/criatura/show?nome=azuporim"><img alt="140x140" src="/static/img/criaturas/azuporim.png" class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/criatura/show?nome=azuporim">
-						Azuporim</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-3 column">
+                    <a href="/criatura/show?nome=azuporim"><img alt="140x140" src="/static/img/criaturas/azuporim.png"
+                                                                class="img-hab img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/criatura/show?nome=azuporim">
+                        Azuporim</a>
+                    </h3>
+                </div>
+            </div>
 
         </div>
     </div>
 
-</div>
+    </div>
+
 {% endblock %}

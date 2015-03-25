@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+{% block tComp %} - Nome{% endblock %}
+{% block body %}
+    <div class="container container-full" style="padding-bottom: 15px">
+
+        <div class="row clearfix">
+
+            <div class="col-sm-10 col-sm-offset-1">
+                <h2 style="margin-top: 15px">
+                    Meu Perfil
+                </h2>
+
+                <div class="row guia_texto">
+                    <div class="col-sm-2">
+                        Nome:
+                    </div>
+                    <div class="col-sm-6">
+                        Meu nome Aqui
+                    </div>
+                </div>
+                <div class="row guia_texto">
+                    <div class="col-sm-2">
+                        Email:
+                    </div>
+                    <div class="col-sm-6">
+                        Meu e-mail aqui
+                    </div>
+                </div>
+
+                <a class="btn btn-default" href="/perfil">Alterar Dados</a>
+                <hr/>
+                <h2>
+                    <a href="/perfil">Ecrever Novo Guia</a>
+                </h2>
+                <hr/>
+                <h2>
+                    Meus Guias
+                </h2>
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="row item-block">
+                            <div class="col-sm-3 column">
+                                <a href="/guia/show?cod=0001"><img alt="140x140" src="/static/img/portraits/corki.png"
+                                                                   class="img-mid img-responsive"></a>
+                            </div>
+                            <div class="col-sm-9 column">
+                                <h3><a href="/guia/show">
+                                    Corki Jungle HUEHUE BRBR</a>
+                                </h3>
+
+                                <p>
+                                    Quer trollar os amiguinhos com estilo?
+                                    Vamo aloprar então, Corki jungle é top rapaz.
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <a class="btn btn-default" href="/guia/show">Editar</a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        Nota:
+                                        3/10
+                                    </div>
+                                    <div class="col-sm-4">
+                                        Personagem:
+                                        Corki
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

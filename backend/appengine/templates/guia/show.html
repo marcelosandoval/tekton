@@ -1,203 +1,204 @@
-{% extends 'base/base.html'%}
+{% extends 'base/base.html' %}
 {% block tComp %} - Guias show{% endblock %}
-{%  block body %}
-<div class="container container-full">
+{% block body %}
+    <div class="container container-full">
 
 
-
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 item-block">
-            <div class="row" >
-				<div class="col-sm-3 column">
-					<img alt="140x140" src="/static/img/guides.png"class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-9 column">
-					<h2>
-                        Titulo do Guia
-					</h2>
-                    <div class="row texto_desc">
-                        <div class="col-sm-4">
-                            Autor:
-                        </div>
-                        <div class="col-sm-4">
-                            Nota:
-                        </div>
-                        <div class="col-sm-4">
-                            Personagem:
-                        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 item-block">
+                <div class="row">
+                    <div class="col-sm-3 column">
+                        <img alt="140x140" src="/static/img/guides.png" class="img-mid img-responsive">
                     </div>
-                    <div class="row texto_desc">
-                        <div class="col-sm-4 column">
-                            Descrição
+                    <div class="col-sm-9 column">
+                        <h2>
+                            Titulo do Guia
+                        </h2>
+
+                        <div class="row texto_desc">
+                            <div class="col-sm-4">
+                                Autor:
+                            </div>
+                            <div class="col-sm-4">
+                                Nota:
+                            </div>
+                            <div class="col-sm-4">
+                                Personagem:
+                            </div>
                         </div>
-                        <div class="col-sm-4 column">
-                            Descrição
+                        <div class="row texto_desc">
+                            <div class="col-sm-4 column">
+                                Descrição
+                            </div>
+                            <div class="col-sm-4 column">
+                                Descrição
+                            </div>
+                            <div class="col-sm-4 column">
+                                Descrição
+                            </div>
                         </div>
-                        <div class="col-sm-4 column">
-                            Descrição
-                        </div>
+
                     </div>
+                </div>
+                <hr>
 
+                <div class="row guia_texto">
+                    <div class="col-sm-12 column texto_desc">
+                        <h3>Feitiços de Invocador</h3>
+                    </div>
+                    <div class="col-sm-3 column texto_desc">
+                        Recomendados:
+                    </div>
+                    <div class="col-sm-9 column texto_desc">
+                        <img alt="140x140" src="/static/img/feiticos/flash.png" class="img-mid img-responsive"> <img
+                            alt="140x140" src="/static/img/feiticos/ignite.png" class="img-mid img-responsive">
+                    </div>
                 </div>
-                </div>
-            <hr>
 
-            <div class="row guia_texto">
-                <div class="col-sm-12 column texto_desc">
-                    <h3>Feitiços de Invocador</h3>
+                <div class="row guia_texto">
+                    <div class="col-sm-12 column texto_desc">
+                        <h3>Página de Talentos</h3>
+                    </div>
+                    <div class="col-sm-4 column texto_desc">
+                        Ataque: 21
+                    </div>
+                    <div class="col-sm-4 column texto_desc">
+                        Defesa: 0
+                    </div>
+                    <div class="col-sm-4 column texto_desc">
+                        Utilidade: 9
+                    </div>
+                    <div class="col-sm-4 column texto_desc">
+                        <img alt="140x140" src="/static/img/temp/ataque.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-4 column texto_desc">
+                        <img alt="140x140" src="/static/img/temp/defesa.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-4 column texto_desc">
+                        <img alt="140x140" src="/static/img/temp/utilidade.png" class="img-mid img-responsive">
+                    </div>
                 </div>
-                <div class="col-sm-3 column texto_desc">
-                    Recomendados:
-                </div>
-                <div class="col-sm-9 column texto_desc">
-                    <img alt="140x140" src="/static/img/feiticos/flash.png"class="img-mid img-responsive">   <img alt="140x140" src="/static/img/feiticos/ignite.png"class="img-mid img-responsive">
-                </div>
-			</div>
 
-            <div class="row guia_texto">
-                <div class="col-sm-12 column texto_desc">
-                    <h3>Página de Talentos</h3>
+                <div class="row guia_texto">
+                    <div class="col-sm-12 column texto_desc">
+                        <h3>Página de Runas</h3>
+                    </div>
+                    <div class="col-sm-3  col-sm-offset-1  column texto_desc">
+                        Selos:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        Magic Pen x 9
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1  column texto_desc">
+                        Marcas:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        Magic Pen x 9
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1  column texto_desc">
+                        Glifos:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        Magic Pen x 9 <br/>
+                        Armor x 9
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1  column texto_desc">
+                        Quintessencias:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        Magic Pen x 9
+                    </div>
                 </div>
-                <div class="col-sm-4 column texto_desc">
-                    Ataque: 21
-                </div>
-                <div class="col-sm-4 column texto_desc">
-                    Defesa: 0
-                </div>
-                <div class="col-sm-4 column texto_desc">
-                    Utilidade: 9
-                </div>
-                <div class="col-sm-4 column texto_desc">
-                    <img alt="140x140" src="/static/img/temp/ataque.png"class="img-mid img-responsive">
-                </div>
-                <div class="col-sm-4 column texto_desc">
-                    <img alt="140x140" src="/static/img/temp/defesa.png"class="img-mid img-responsive">
-                </div>
-                <div class="col-sm-4 column texto_desc">
-                    <img alt="140x140" src="/static/img/temp/utilidade.png"class="img-mid img-responsive">
-                </div>
-			</div>
-
-            <div class="row guia_texto">
-                <div class="col-sm-12 column texto_desc">
-                    <h3>Página de Runas</h3>
-                </div>
-                <div class="col-sm-3  col-sm-offset-1  column texto_desc">
-                    Selos:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    Magic Pen x 9
-                </div>
-                <div class="col-sm-3 col-sm-offset-1  column texto_desc">
-                    Marcas:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    Magic Pen x 9
-                </div>
-                <div class="col-sm-3 col-sm-offset-1  column texto_desc">
-                    Glifos:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    Magic Pen x 9 <br/>
-                    Armor x 9
-                </div>
-                <div class="col-sm-3 col-sm-offset-1  column texto_desc">
-                    Quintessencias:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    Magic Pen x 9
-                </div>
-			</div>
-
-
-            <div class="row guia_texto">
-                <div class="col-sm-12 column texto_desc">
-                    <h3>Itens</h3>
-                </div>
-                <div class="col-sm-3  col-sm-offset-1  column texto_desc">
-                    Iniciais:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    <img alt="140x140" src="/static/img/itens/gema_ardente.png"class="img-mid img-responsive">
-
-                    <img alt="140x140" src="/static/img/itens/cetro_vampirico.png"class="img-mid img-responsive">
-                </div>
-                <div class="col-sm-3 col-sm-offset-1  column texto_desc">
-                    Essenciais:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    <img alt="140x140" src="/static/img/itens/cristal_rubi.png"class="img-mid img-responsive">
-                    <img alt="140x140" src="/static/img/itens/gema_ardente.png"class="img-mid img-responsive">
-                    <img alt="140x140" src="/static/img/itens/espada_longa.png"class="img-mid img-responsive">
-                </div>
-                <div class="col-sm-3 col-sm-offset-1  column texto_desc">
-                    Defensivos:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    <img alt="140x140" src="/static/img/itens/gema_ardente.png"class="img-mid img-responsive">
-                    <img alt="140x140" src="/static/img/itens/cristal_rubi.png"class="img-mid img-responsive">
-                    <img alt="140x140" src="/static/img/itens/gema_ardente.png"class="img-mid img-responsive">
-                </div>
-                <div class="col-sm-3 col-sm-offset-1  column texto_desc">
-                    Ofensivos:
-                </div>
-                <div class="col-sm-8 column texto_desc">
-                    <img alt="140x140" src="/static/img/itens/gema_ardente.png"class="img-mid img-responsive">
-                    <img alt="140x140" src="/static/img/itens/cetro_vampirico.png"class="img-mid img-responsive"
-                            ><img alt="140x140" src="/static/img/itens/espada_longa.png"class="img-mid img-responsive">
-                </div>
-			</div>
-            <div class="row guia_texto">
-                <div class="col-sm-12 column texto_desc">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    , when an unknown printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                    PageMaker including versions of Lorem Ipsum<br/>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    , when an unknown printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                    PageMaker including versions of Lorem Ipsum<br/>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    , when an unknown printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                    PageMaker including versions of Lorem Ipsum<br/>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    , when an unknown printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                    PageMaker including versions of Lorem Ipsum<br/>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    , when an unknown printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                    PageMaker including versions of Lorem Ipsum<br/>
-
-                </div>
-			</div>
 
 
+                <div class="row guia_texto">
+                    <div class="col-sm-12 column texto_desc">
+                        <h3>Itens</h3>
+                    </div>
+                    <div class="col-sm-3  col-sm-offset-1  column texto_desc">
+                        Iniciais:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        <img alt="140x140" src="/static/img/itens/gema_ardente.png" class="img-mid img-responsive">
 
+                        <img alt="140x140" src="/static/img/itens/cetro_vampirico.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1  column texto_desc">
+                        Essenciais:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        <img alt="140x140" src="/static/img/itens/cristal_rubi.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/itens/gema_ardente.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/itens/espada_longa.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1  column texto_desc">
+                        Defensivos:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        <img alt="140x140" src="/static/img/itens/gema_ardente.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/itens/cristal_rubi.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/itens/gema_ardente.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1  column texto_desc">
+                        Ofensivos:
+                    </div>
+                    <div class="col-sm-8 column texto_desc">
+                        <img alt="140x140" src="/static/img/itens/gema_ardente.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/itens/cetro_vampirico.png" class="img-mid img-responsive"
+                                ><img alt="140x140" src="/static/img/itens/espada_longa.png"
+                                      class="img-mid img-responsive">
+                    </div>
+                </div>
+                <div class="row guia_texto">
+                    <div class="col-sm-12 column texto_desc">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        , when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum<br/>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        , when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum<br/>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        , when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum<br/>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        , when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum<br/>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        , when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum<br/>
+
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
     </div>
-</div>
 {% endblock %}

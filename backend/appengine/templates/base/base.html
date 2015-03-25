@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>League of Draven{% block tComp %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <title>League of Draven{% block tComp %}{% endblock %}</title>
 
-{% block css %}
-	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-{% endblock %}
-{% block js %}
-	<script type="text/javascript" src="/static/jquery/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
-{% endblock %}
+    {% block css %}
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+    {% endblock %}
+    {% block js %}
+        <script type="text/javascript" src="/static/jquery/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    {% endblock %}
 </head>
 
 <body>
 {% block navbar %}
-<nav class="navbar navbar-default navbar-inverse navbar-static-top sem_margb" role="navigation">
-				<div class="navbar-header">
-					 <a class="navbar-brand" href="/"><img alt="League of Legends logo" src="/static/img/lod-logo.png" width="226" height="123" style="margin-top: -25px; margin-left: -15px"></a>
-				</div>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top sem_margb" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img alt="League of Legends logo" src="/static/img/lod-logo.png"
+                                                  width="226" height="123"
+                                                  style="margin-top: -25px; margin-left: -15px"></a>
+        </div>
 
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="/campeao">Campeões</a>
-						</li>
-						<li class="active">
-							<a href="/item">Itens</a>
-						</li>
-						<li class="active">
-							<a href="/criatura">Criaturas</a>
-						</li>
-						<li class="active">
-							<a href="/guia">Guias</a>
-						</li>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/campeao">Campeões</a>
+                </li>
+                <li class="active">
+                    <a href="/item">Itens</a>
+                </li>
+                <li class="active">
+                    <a href="/criatura">Criaturas</a>
+                </li>
+                <li class="active">
+                    <a href="/guia">Guias</a>
+                </li>
 
-					</ul>
+            </ul>
 
-				</div>
+        </div>
 
-			</nav>
+    </nav>
+{% endblock %}
+{% block logBlock %}
+    <div class="login-block">
+                <form role="form" action="/perfil">
+                    <div class="form-group login-item" >
+                        <div class="row clearfix login-item">
+                            <div class="col-sm-4 column login-item" align="center"><label>Usuário: </label></div>
+                            <div class="col-sm-8 column login-item"><input type="text" class="form-control" id="login_nome" name="login_nome"></div>
+                        </div>
+                        <div class="row clearfix  login-item">
+                            <div class="col-sm-4 column login-item" align="center"><label>Senha: </label></div>
+                            <div class="col-sm-8 column login-item"><input type="text" class="form-control" id="login_senha" name="login_senha"></div>
+                        </div>
+                        <div class="row clearfix  login-item" align="center">
+                            <div class="col-sm-6 column login-item">
+                                <button type="submit"  class="btn btn-info btn-block">Logar</button>
+                            </div>
+                            <div class="col-sm-6 column login-item"><a class="btn btn-info btn-block" href="/cadastrar">Cadastrar</a></div>
+                        </div>
+
+
+                    </div>
+
+                </form>
+            </div>
 {% endblock %}
 {% block body %}
 {% endblock %}
-{% block rodape %}
-<div class="row ">
-    <div class="col-sm-12 rodape">
-        Projeto de Script - Marcelo Augusto Sandoval - 5ºADS - manhã - 1º semestre 2015
-    </div>
-</div>
-{% endblock %}
+
 </body>
 </html>

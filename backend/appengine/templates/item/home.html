@@ -1,83 +1,73 @@
-{% extends 'base/base.html'%}
+{% extends 'base/baselista.html' %}
 {% block tComp %} - Itens{% endblock %}
-{% block body %}
-<div class="container container-full">
+{% block imagem %}<img alt="140x140" src="/static/img/itens.png" class="img-mid img-responsive">{% endblock %}
+{% block titulo %}Itens{% endblock %}
+{% block descricao %}
+    Para aprofundar seu conhecimento sobre League of Legends é precisso conhecer os itens do jogo,
+    seus efeitos, atributos e custos. Dessa forma ficara muito mais facil decidir suas próximas
+    ações dentro da partida. Aqui estão disponiveis todas as informações em relação aos itens.
+{% endblock %}
 
-	<div class="row clearfix">
-				<div class="col-sm-3 col-sm-offset-1">
-					<img alt="140x140" src="/static/img/itens.png" class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-7 column">
-					<h2>
-						Itens
-					</h2>
-					<p>
-                        Para aprofundar seu conhecimento sobre League of Legends é precisso conhecer os itens do jogo,
-                        seus efeitos, atributos e custos. Dessa forma ficara muito mais facil decidir suas próximas
-                        ações dentro da partida. Aqui estão disponiveis todas as informações em relação aos itens.
-					</p>
-				</div>
-	</div>
+{% block Listagem %}
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
 
-	            <div class="row clearfix barra-pesquisa">
-                    <div class="col-sm-2 col-sm-offset-2">
-                    </div>
+            <div class="row item-block">
+                <div class="col-sm-3 column">
+                    <a href="/item/show?nome=espada_longa"><img alt="140x140" src="/static/img/itens/espada_longa.png"
+                                                                class="img-hab img-responsive"></a>
                 </div>
-
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-2">
-
-            <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/item/show?nome=espada_longa"><img alt="140x140" src="/static/img/itens/espada_longa.png"class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/item/show?nome=espada_longa">
-						Espada Longa</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/item/show?nome=espada_longa">
+                        Espada Longa</a>
+                    </h3>
+                </div>
+            </div>
         </div>
         <div class="col-sm-4">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/item/show?nome=cetro_vampirico"><img alt="140x140" src="/static/img/itens/cetro_vampirico.png" class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/item/show?nome=cetro_vampirico">
-						Cetro Vampirico</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-3 column">
+                    <a href="/item/show?nome=cetro_vampirico"><img alt="140x140"
+                                                                   src="/static/img/itens/cetro_vampirico.png"
+                                                                   class="img-hab img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/item/show?nome=cetro_vampirico">
+                        Cetro Vampirico</a>
+                    </h3>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-2">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/item/show?nome=cristal_rubi"><img alt="140x140" src="/static/img/itens/cristal_rubi.png"class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/item/show?nome=cristal_rubi">
-						Cristal de Rubi</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-3 column">
+                    <a href="/item/show?nome=cristal_rubi"><img alt="140x140" src="/static/img/itens/cristal_rubi.png"
+                                                                class="img-hab img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/item/show?nome=cristal_rubi">
+                        Cristal de Rubi</a>
+                    </h3>
+                </div>
+            </div>
         </div>
         <div class="col-sm-4">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/item/show/gema_ardente"><img alt="140x140" src="/static/img/itens/gema_ardente.png" class="img-hab img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/item/show?nome=gema_ardente">
-						Gema Ardente</a>
-					</h3>
-				</div>
-			</div>
+                <div class="col-sm-3 column">
+                    <a href="/item/show/gema_ardente"><img alt="140x140" src="/static/img/itens/gema_ardente.png"
+                                                           class="img-hab img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/item/show?nome=gema_ardente">
+                        Gema Ardente</a>
+                    </h3>
+                </div>
+            </div>
 
         </div>
     </div>
 
-</div>
+    </div>
 {% endblock %}

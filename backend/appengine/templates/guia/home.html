@@ -1,56 +1,52 @@
-{% extends 'base/base.html'%}
+{% extends 'base/baselista.html' %}
 {% block tComp %} - Guias{% endblock %}
 
-{% block body %}
-<div class="container container-full">
+{% block imagem %}
+    <img alt="140x140" src="/static/img/guides.png" class="img-mid img-responsive">
+{% endblock %}
+{% block titulo %}
+    Guias
+{% endblock %}
+{% block descricao %}
+    Já tentou jogar com um campeão apelão e percebeu que era presciso mais que dez dedos pra isso?<br/>
+    Aqui os jogadores podem ler e escrever guias de jogo de seus campeões favoritos, compartilhando
+    e aprendendo macetes, taticas, builds, runas e talentos que possam ajudar seu desempenho.
+{% endblock %}
+{% block barFiltro %}
+    <form name="guia" id="guia">
+        <div class="col-sm-2 col-sm-offset-2">
+            <select name="guia_filtro" id="guia_filtro" class="form-control">
+                <option value="personagem" selected>Personagem</option>
+                <option value="autor">Autor</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="guia_termo" id="guia_termo" class="form-control">
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-default">Pesquisar</button>
+        </div>
 
-	<div class="row clearfix">
-				<div class="col-sm-3 col-sm-offset-1">
-					<img alt="140x140" src="/static/img/guides.png" class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-7 column">
-					<h2>
-						Guias
-					</h2>
-					<p>
-                        Já tentou jogar com um campeão apelão e percebeu que era presciso mais que dez dedos pra isso?<br />
-                        Aqui os jogadores podem ler e escrever guias de jogo de seus campeões favoritos, compartilhando
-                        e aprendendo macetes, taticas, builds, runas e talentos que possam ajudar seu desempenho.
-					</p>
-				</div>
-	</div>
-
-            <form name="guia" id="guia">
-	            <div class="row clearfix barra-pesquisa form-group">
-                    <div class="col-sm-2 col-sm-offset-2">
-                        <select name="guia_filtro" id="guia_filtro" class="form-control" >
-                            <option value="personagem" selected>Personagem</option>
-                            <option value="autor">Autor</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="text" name="guia_termo" id="guia_termo" class="form-control">
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-default">Pesquisar</button>
-                    </div>
-                </div>
-            </form>
-
+    </form>
+{% endblock %}
+{% block Listagem %}
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/guia/show?cod=0001"><img alt="140x140" src="/static/img/portraits/corki.png"class="img-mid img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/guia/show?cod=0001">
-						Corki Jungle HUEHUE BRBR</a>
-					</h3>
-					<p>
+                <div class="col-sm-3 column">
+                    <a href="/guia/show?cod=0001"><img alt="140x140" src="/static/img/portraits/corki.png"
+                                                       class="img-mid img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/guia/show?cod=0001">
+                        Corki Jungle HUEHUE BRBR</a>
+                    </h3>
+
+                    <p>
                         Quer trollar os amiguinhos com estilo?
                         Vamo aloprar então, Corki jungle é top rapaz.
                     </p>
+
                     <div class="row">
                         <div class="col-sm-4">
                             Autor:
@@ -65,19 +61,23 @@
                             Corki
                         </div>
                     </div>
-				</div>
-			</div>
+                </div>
+            </div>
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/guia/show?cod=0002"><img alt="140x140" src="/static/img/portraits/mordekaiser.png" class="img-mid img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/guia/show?cod=0002">
-							Mordekaiser Top Imortal</a>
-					</h3>
-					<p>
-                        Mordekaiser é #1, aprenda a tornar esse monstro numa critura imortal e dar gg sozinho em seus games.
+                <div class="col-sm-3 column">
+                    <a href="/guia/show?cod=0002"><img alt="140x140" src="/static/img/portraits/mordekaiser.png"
+                                                       class="img-mid img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/guia/show?cod=0002">
+                        Mordekaiser Top Imortal</a>
+                    </h3>
+
+                    <p>
+                        Mordekaiser é #1, aprenda a tornar esse monstro numa critura imortal e dar gg sozinho em seus
+                        games.
                     </p>
+
                     <div class="row">
                         <div class="col-sm-4">
                             Autor:
@@ -92,21 +92,24 @@
                             Mordekaiser
                         </div>
                     </div>
-				</div>
-			</div>
+                </div>
+            </div>
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/guia/show?cod=0003"><img alt="140x140" src="/static/img/portraits/alistar.png"class="img-mid img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/guia/show?cod=0003">
-							Touro Boladão na Selva</a>
-					</h3>
-					<p>
+                <div class="col-sm-3 column">
+                    <a href="/guia/show?cod=0003"><img alt="140x140" src="/static/img/portraits/alistar.png"
+                                                       class="img-mid img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/guia/show?cod=0003">
+                        Touro Boladão na Selva</a>
+                    </h3>
+
+                    <p>
                         Que o touro alistar é bolado sendo suporte todo mundo sabe,
                         mas oucos sabem como levar toda essa show de bolice parra a jungle,
                         aqui é explicado o passo a passo do Alistar Jungle.
                     </p>
+
                     <div class="row">
                         <div class="col-sm-4">
                             Autor:
@@ -121,20 +124,23 @@
                             Alistar
                         </div>
                     </div>
-				</div>
-			</div>
+                </div>
+            </div>
             <div class="row item-block">
-				<div class="col-sm-3 column">
-					<a href="/guia/show?cod=0004"><img alt="140x140" src="/static/img/portraits/akali.png" href="/campeao/alistar" class="img-mid img-responsive"></a>
-				</div>
-				<div class="col-sm-9 column">
-					<h3><a href="/guia/show?cod=0004">
-							Stompano Top de akali</a>
-					</h3>
-					<p>
+                <div class="col-sm-3 column">
+                    <a href="/guia/show?cod=0004"><img alt="140x140" src="/static/img/portraits/akali.png"
+                                                       href="/campeao/alistar" class="img-mid img-responsive"></a>
+                </div>
+                <div class="col-sm-9 column">
+                    <h3><a href="/guia/show?cod=0004">
+                        Stompano Top de akali</a>
+                    </h3>
+
+                    <p>
                         Ganhando a partida em 15 minutos, independente do inimigo.
                         aprenda a stompar qualquer um no top com a akali.
                     </p>
+
                     <div class="row">
                         <div class="col-sm-4">
                             Autor:
@@ -149,11 +155,11 @@
                             Akali
                         </div>
                     </div>
-				</div>
-			</div>
+                </div>
+            </div>
 
         </div>
     </div>
 
-</div>
+    </div>
 {% endblock %}

@@ -1,153 +1,146 @@
-{% extends 'base/base.html'%}
+{% extends 'base/base.html' %}
 
 {% block body %}
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-sm-3 column" align="center">
-			<img alt="600x650" src="/static/img/draven-soulreaper.png" class="img-mid img-responsive" style="margin-top: 200px">
-		</div>
-		<div class="col-sm-6 column bloco-draven">
-			<div align="center">
-				<div class="titulo-draven">
-					Bem vindos ao <br />League of Draven!!
-				</div>
-				<p><div class="apres-draven">
-                    Aqui você encontra informações sobre diversos elementos de League of Legends, e guias escritos e
-                    avaliados pela própria comunidade de jogadores.<br />
-                </div></p>
-			</div>
-		</div>
-		<div class="col-sm-3 column login-block">
-			<form role="form">
-				<div class="form-groupmargin-bottom: 0px">
-	                <div class="row clearfix pad">
-		                <div class="col-sm-4 column"align="center"><label>Usuário: </label></div>
-                        <div class="col-sm-8 column"><input type="text" class="form-control" id=""></div>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-sm-3 column" align="center">
+                <img alt="600x650" src="/static/img/draven-soulreaper.png" class="img-mid img-responsive"
+                     style="margin-top: 200px">
+            </div>
+            <div class="col-sm-6 column bloco-draven">
+                <div align="center">
+                    <div class="titulo-draven">
+                        Bem vindos ao <br/>League of Draven!!
                     </div>
-	                <div class="row clearfix pad" >
-		                <div class="col-sm-4 column"align="center"><label>Senha: </label></div>
-                        <div class="col-sm-8 column"><input type="text" class="form-control" id=""></div>
-                    </div>
-	                <div class="row clearfix pad" align="center">
-		                <div class="col-sm-12 column"><button type="submit" class="btn btn-info btn-block">Submit</button></div>
-                    </div>
-	                <div class="row clearfix pad" align="center">
-		                <div class="col-sm-12 column"><a class="btn" href="/alterar_senha">Esqueci minha senha</a></div>
-                    </div>
-	                <div class="row clearfix pad" align="center">
-		                <div class="col-sm-12 column"><a class="btn" href="/cadastro">Realizar cadastro</a></div>
-                    </div>
+                    <p>
 
-
-
-				</div>
-
-			</form>
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-sm-2 column">
-		</div>
-		<div class="col-sm-8 column">
-			<div class="row item-block">
-				<div class="col-sm-3 column">
-					<img alt="140x140" src="/static/img/champions.png" class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-9 column">
-					<h2>
-						Campeões
-					</h2>
-					<p>
-                        Veja informações e dados sobre os campeões de League of Legends, sempre atualizados com o último
-                        patch do servidor live. Aqui se encontram os atributos dos campões, descrições de suas habilidades,
-                        assim como varias informações e curiosidades.
-					</p>
-					<p>
-						<a class="btn" href="/campeao">Ir para a página de campeões »</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-2 column">
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-sm-2 column">
-		</div>
-		<div class="col-sm-8 column">
-			<div class="row item-block">
-				<div class="col-sm-3 column">
-					<img alt="140x140" src="/static/img/itens.png" class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-9 column">
-					<h2>
-						Itens
-					</h2>
-					<p>
-                        Para aprofundar seu conhecimento sobre League of Legends é precisso conhecer os itens do jogo,
-                        seus efeitos, atributos e custos. Dessa forma ficara muito mais facil decidir suas próximas
-                        ações dentro da partida. Aqui estão disponiveis todas as informações em relação aos itens.
+                    <div class="apres-draven">
+                        Aqui você encontra informações sobre diversos elementos de League of Legends, e guias escritos e
+                        avaliados pela própria comunidade de jogadores.<br/>
+                    </div>
                     </p>
-					<p>
-						<a class="btn" href="/item">Ir para a página de itens »</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-2 column">
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-sm-2 column">
-		</div>
-		<div class="col-sm-8 column">
-			<div class="row item-block">
-				<div class="col-sm-3 column">
-					<img alt="140x140" src="/static/img/creatures.png" class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-9 column">
-					<h2>
-						Criaturas
-					</h2>
-					<p>
-                        Para conseguir escalar seu poder dentro do jogo e garantir uma vitória você deve conhecer todas
-                        as criaturas da selva, seus atributos, buffs e tempo de respawn, assim optimizando suas rotas
-                        por entre a selva  e garantindo grando objetivos.
-                    </p>
-					<p>
-						<a class="btn" href="/criatura">Ir para a página de criaturas »</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-2 column">
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-sm-2 column">
-		</div>
-		<div class="col-sm-8 column">
-			<div class="row item-block">
-				<div class="col-sm-3 column">
-					<img alt="140x140" src="/static/img/guides.png" class="img-mid img-responsive">
-				</div>
-				<div class="col-sm-9 column">
-					<h2>
-						Guias
-					</h2>
-					<p>
-                        Já tentou jogar com um campeão apelão e percebeu que era presciso mais que dez dedos pra isso?<br />
-                        Aqui os jogadores podem ler e escrever guias de jogo de seus campeões favoritos, compartilhando
-                        e aprendendo macetes, taticas, builds, runas e talentos que possam ajudar seu desempenho.
-                    </p>
-					<p>
-						<a class="btn" href="/guia">Ir para a página de guias »</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-2 column">
-		</div>
-	</div>
-</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-3 column">
+                        <img alt="140x140" src="/static/img/champions.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-9 column">
+                        <h2>
+                            Campeões
+                        </h2>
+
+                        <p>
+                            Veja informações e dados sobre os campeões de League of Legends, sempre atualizados com o
+                            último
+                            patch do servidor live. Aqui se encontram os atributos dos campões, descrições de suas
+                            habilidades,
+                            assim como varias informações e curiosidades.
+                        </p>
+
+                        <p>
+                            <a class="btn" href="/campeao">Ir para a página de campeões »</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-3 column">
+                        <img alt="140x140" src="/static/img/itens.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-9 column">
+                        <h2>
+                            Itens
+                        </h2>
+
+                        <p>
+                            Para aprofundar seu conhecimento sobre League of Legends é precisso conhecer os itens do
+                            jogo,
+                            seus efeitos, atributos e custos. Dessa forma ficara muito mais facil decidir suas próximas
+                            ações dentro da partida. Aqui estão disponiveis todas as informações em relação aos itens.
+                        </p>
+
+                        <p>
+                            <a class="btn" href="/item">Ir para a página de itens »</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-3 column">
+                        <img alt="140x140" src="/static/img/creatures.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-9 column">
+                        <h2>
+                            Criaturas
+                        </h2>
+
+                        <p>
+                            Para conseguir escalar seu poder dentro do jogo e garantir uma vitória você deve conhecer
+                            todas
+                            as criaturas da selva, seus atributos, buffs e tempo de respawn, assim optimizando suas
+                            rotas
+                            por entre a selva e garantindo grando objetivos.
+                        </p>
+
+                        <p>
+                            <a class="btn" href="/criatura">Ir para a página de criaturas »</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-3 column">
+                        <img alt="140x140" src="/static/img/guides.png" class="img-mid img-responsive">
+                    </div>
+                    <div class="col-sm-9 column">
+                        <h2>
+                            Guias
+                        </h2>
+
+                        <p>
+                            Já tentou jogar com um campeão apelão e percebeu que era presciso mais que dez dedos pra
+                            isso?<br/>
+                            Aqui os jogadores podem ler e escrever guias de jogo de seus campeões favoritos,
+                            compartilhando
+                            e aprendendo macetes, taticas, builds, runas e talentos que possam ajudar seu desempenho.
+                        </p>
+
+                        <p>
+                            <a class="btn" href="/guia">Ir para a página de guias »</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+    </div>
 {% endblock %}

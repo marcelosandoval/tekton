@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% block body %}
+    <div class="container container-full">
+
+        <div class="row clearfix">
+            <div class="col-sm-3 col-sm-offset-1">
+                {% block imagem %}{% endblock %}
+            </div>
+            <div class="col-sm-7 column">
+                <h2>
+                    {% block titulo %}{% endblock %}
+                </h2>
+
+                <p>
+                    {% block descricao %}{% endblock %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row clearfix barra-pesquisa form-group">
+            {% block barFiltro %}
+                <div class="col-sm-2 col-sm-offset-2"></div>
+            {% endblock %}
+
+        </div>
+
+        {% block Listagem %}{% endblock %}
+
+    </div>
+{% endblock %}
