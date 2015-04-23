@@ -1,19 +1,26 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-from google.appengine.ext import ndb
 from config.template_middleware import TemplateResponse
 from gaecookie.decorator import no_csrf
-from gaeforms import base
-from gaeforms.base import Form
-from gaegraph.model import Node
 from gaepermission.decorator import login_not_required
+from routes.criatura.modelo import CriaturaForm, Criatura
+from routes.criatura.home import returnIndex
 from tekton import router
+from tekton.gae.middleware.redirect import RedirectResponse
+from gaeforms.ndb.form import ModelForm
+from gaegraph.model import Node
+from google.appengine.ext import ndb
 
 
 @login_not_required
 @no_csrf
-def index(nome='none'):
-    return TemplateResponse()
+def index(_resp,criatura_id):
+
+    criatura_id=int(criatura_id)
+    criatura=Criatura.get_by_id(criatura_id)
+
+    contexto={'criatura':criatura}
+    return TemplateResponse(contexto)
 
 
 
@@ -22,58 +29,50 @@ def form():
     contexto={'salvar_path':router.to_path(salvar)}
     return TemplateResponse(contexto,template_path='criatura/form.html')
 
-class Criatura(Node):
-    name=ndb.StringProperty(required=True)
-    type=ndb.StringProperty()
-    gold=ndb.IntegerProperty()
-    xp=ndb.IntegerProperty()
-    hp=ndb.IntegerProperty()
-    damage=ndb.IntegerProperty()
-    atksp=ndb.IntegerProperty()
-    armor=ndb.IntegerProperty()
-    magicres=ndb.IntegerProperty()
-    movesp=ndb.IntegerProperty()
-    spawn=ndb.StringProperty()
-    respawn=ndb.StringProperty()
-    buff=ndb.TextProperty()
 
-class CriaturaForm(Form):
-
-    name=base.StringField(required=True)
-    type=base.StringField()
-    gold=base.IntegerField()
-    xp=base.IntegerField()
-    hp=base.IntegerField()
-    damage=base.IntegerField()
-    atksp=base.IntegerField()
-    armor=base.IntegerField()
-    magicres=base.IntegerField()
-    movesp=base.IntegerField()
-    spawn=base.StringField()
-    respawn=base.StringField()
-    buff=base.StringField()
-
-def salvar(_resp,**prop):
+def salvar(**prop):
 
     criaturaF=CriaturaForm(**prop)
     erros=criaturaF.validate()
     if erros:
-        _resp.write(erros)
-    else:
-        pass
+        contexto={'salvar_path':router.to_path(salvar),
+                  'erros':erros,
+                  'criatura':criaturaF}
+        return TemplateResponse(contexto,'criatura/form.html')
 
-    #criatura=Criatura(name=prop['name'],
-    #                  type=prop['type'],
-     #                 gold=int(prop['gold']),
-      #                xp=int(prop['xp']),
-       #               hp=int(prop['hp']),
-        #              damage=int(prop['damage']),
-         #             atksp=int(prop['atksp']),
-          #            armor=int(prop['armor']),
-           #           magicres=int(prop['magicres']),
-            #          movesp=int(prop['movesp']),
-             #         spawn=prop['spawn'],
-              #        respawn=prop['respawn'],
-               #       buff=prop['buff'])
- #   criatura.put()
-  #  _resp.write(prop)
+    else:
+        criatura=criaturaF.fill_model()
+        criatura.put()
+        return RedirectResponse(returnIndex())
+
+
+@no_csrf
+def editar_form(criatura_id):
+    criatura_id=int(criatura_id)
+    criatura=Criatura.get_by_id(criatura_id)
+    contexto={'salvar_path':router.to_path(editar,criatura_id),'criatura':criatura}
+    return TemplateResponse(contexto,template_path='criatura/form.html')
+
+
+def editar(criatura_id,**prop):
+
+    criatura_id=int(criatura_id)
+    criatura=Criatura.get_by_id(criatura_id)
+
+    criaturaF=CriaturaForm(**prop)
+    erros=criaturaF.validate()
+    if erros:
+        contexto={'salvar_path':router.to_path(salvar),
+                  'erros':erros,
+                  'criatura':criaturaF}
+        return TemplateResponse(contexto,'criatura/form.html')
+
+    else:
+        criaturaF.fill_model(criatura)
+        criatura.put()
+        return RedirectResponse(returnIndex())
+
+def deletar(criatura_id):
+    chave=ndb.Key(Criatura,int(criatura_id))
+    chave.delete()
+    return RedirectResponse(returnIndex())

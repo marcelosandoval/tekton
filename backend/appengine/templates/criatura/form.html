@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% block tComp %}Form criaturas{% endblock %}
+{% if criatura is undefined%}
+    {% set criatura=None %}
+{% endif %}
+{% if erros is undefined%}
+    {% set erros=None %}
+{% endif %}
+{% block body %}
+    <div class="container">
+
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-12 column">
+                        <h2>
+                            Formulário de criaturas
+                        </h2>
+
+                        <form action="{{ salvar_path }}" method="post" role="form">
+                            {{  csrf_input() }}
+                            {{ form_input('Nome','name',criatura.name,erros.name) }}
+                            {{ form_input('Caminho Imagem','image',criatura.image,erros.image) }}
+                            {{ form_input('Tipo','type',criatura.type,erros.type) }}
+                            {{ form_input('Ouro','gold',criatura.gold,erros.gold) }}
+                            {{ form_input('Experiencia','xp',criatura.xp,erros.xp) }}
+                            {{ form_input('Vida','hp',criatura.hp,erros.hp) }}
+                            {{ form_input('Dano','damage',criatura.damage,erros.damage) }}
+                            {{ form_input('VelAtk','atksp',criatura.atksp,erros.atksp) }}
+                            {{ form_input('Armadura','armor',criatura.armor,erros.armor) }}
+                            {{ form_input('ResisMagica','magicres',criatura.magicres,erros.magicres) }}
+                            {{ form_input('Movimento','movesp',criatura.movesp,erros.movesp) }}
+                            {{ form_input('Tempo Spwan','spawn',criatura.spawn,erros.spawn) }}
+                            {{ form_input('Tempo Respawn','respawn',criatura.respawn,erros.respawn) }}
+                            {{ form_input('Buff','buff',criatura.buff,erros.buff) }}
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+    </div>
+{% endblock %}

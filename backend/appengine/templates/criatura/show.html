@@ -10,11 +10,11 @@
             <div class="col-sm-8 item-block">
                 <div class="row">
                     <div class="col-sm-3 column">
-                        <img alt="140x140" src="/static/img/creatures.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/{{ criatura.image }}" class="img-mid img-responsive">
                     </div>
                     <div class="col-sm-9 column">
                         <h2>
-                            Nome da Criatura
+                            {{ criatura.name }}
                         </h2><br/>
 
                         <div class="row texto_desc">
@@ -22,7 +22,7 @@
                                 Tipo:
                             </div>
                             <div class="col-sm-9 column">
-                                Descrição
+                                {{ criatura.type }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -30,7 +30,7 @@
                                 Ouro:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.gold }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -38,7 +38,7 @@
                                 Experiencia:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.xp }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -46,7 +46,7 @@
                                 Vida:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.hp }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -54,7 +54,7 @@
                                 Dano:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.damage }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -62,7 +62,7 @@
                                 Velocidade de Ataque:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.atksp }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -70,7 +70,7 @@
                                 Armadura:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.armor }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -78,7 +78,7 @@
                                 Resistencia Magica:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.magicres }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -86,7 +86,7 @@
                                 Movimento:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.movesp }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -94,7 +94,7 @@
                                 Tempo Spawn:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.spawn }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -102,7 +102,7 @@
                                 Tempo Respawn:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ criatura.respawn }}
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                         </h3>
                     </div>
                     <div class="col-sm-9 column texto_desc">
-                        Descrição
+                        {{ criatura.buff }}
                     </div>
                 </div>
 
