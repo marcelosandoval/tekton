@@ -24,6 +24,7 @@
                 <div class="col-sm-9 column">
                     <h3><a href="/criatura/show/{{ criatura.key.id() }}">
                         {{ criatura.name }}</a>
+                        {% if _logged_user and 'ADMIN' in _logged_user.groups %}
                         <br/>
                         <table>
                             <tr>
@@ -43,7 +44,7 @@
                                 </td>
                             </tr>
                         </table>
-
+                        {% endif %}
                     </h3>
                 </div>
             </div>
