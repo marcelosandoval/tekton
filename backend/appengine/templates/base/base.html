@@ -1,16 +1,29 @@
+
 <!DOCTYPE html>
+{% macro csrf_input() %}
+    <input type="hidden" value="{{ _csrf_code }}" name="_csrf_code"/>
+{% endmacro %}
+{% macro form_input(label,property,value,error_msg) %}
+    <div class="form-group {{ ' has-error' if error_msg }}">
+        <label for="{{ property }}Input"
+               class="control-label">{{ label }} </label>
+        <input id="{{ property }}Input" type="text" class="form-control" name="{{ property }}"
+               value="{{ value }}"/>
+        {% if error_msg %}<span class="help-block">{{ error_msg }}</span>{% endif %}
+    </div>
+{% endmacro %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>League of Draven{% block tComp %}{% endblock %}</title>
 
-    {% block css %}
         <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="/static/css/style.css" rel="stylesheet">
+    {% block css %}
     {% endblock %}
-    {% block js %}
         <script type="text/javascript" src="/static/jquery/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    {% block js %}
     {% endblock %}
 </head>
 
@@ -39,34 +52,39 @@
                 </li>
 
             </ul>
-
         </div>
 
     </nav>
 {% endblock %}
 {% block logBlock %}
     <div class="login-block">
-                <form role="form" action="/perfil">
-                    <div class="form-group login-item" >
-                        <div class="row clearfix login-item">
-                            <div class="col-sm-4 column login-item" align="center"><label>Usuário: </label></div>
-                            <div class="col-sm-8 column login-item"><input type="text" class="form-control" id="login_nome" name="login_nome"></div>
-                        </div>
-                        <div class="row clearfix  login-item">
-                            <div class="col-sm-4 column login-item" align="center"><label>Senha: </label></div>
-                            <div class="col-sm-8 column login-item"><input type="text" class="form-control" id="login_senha" name="login_senha"></div>
-                        </div>
-                        <div class="row clearfix  login-item" align="center">
-                            <div class="col-sm-6 column login-item">
-                                <button type="submit"  class="btn btn-info btn-block">Logar</button>
-                            </div>
-                            <div class="col-sm-6 column login-item"><a class="btn btn-info btn-block" href="/cadastrar">Cadastrar</a></div>
-                        </div>
 
-
+        {% if _logged_user %}
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown">
+                            {{ _logged_user.name }}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation" class="text-center"><a role="menuitem" tabindex="-1" href="/account">{% trans %}
+                                Account{% endtrans %}</a></li>
+                            <li role="presentation">
+                                <form action="{{ _logout_path }}" method="post" class="text-center">
+                                    <button class="btn btn-danger" type="submit">{% trans %}
+                                        Logout{% endtrans %}</button>
+                                    {{ csrf_input() }}
+                                </form>
+                            </li>
+                        </ul>
                     </div>
+                {% else %}
+                    <a class="btn btn-info btn-block" href="{{ _login_path }}">{% trans %}Login{% endtrans %}</a>
 
-                </form>
+                {% endif %}
+
+
+
             </div>
 {% endblock %}
 {% block body %}
