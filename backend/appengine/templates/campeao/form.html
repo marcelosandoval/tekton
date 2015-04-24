@@ -1,0 +1,82 @@
+{% extends 'base/base.html' %}
+{% block tComp %}Form campeao{% endblock %}
+
+{% if campeao is undefined%}
+    {% set campeao=None %}
+{% endif %}
+
+{% if erros is undefined%}
+    {% set erros=None %}
+{% endif %}
+
+{% if camPapelL is undefined%}
+    {% set camPapelL=None %}
+{% endif %}
+
+{% if papelP is undefined%}
+    {% set papelP=None %}
+{% endif %}
+
+{% if papelS is undefined%}
+    {% set papelS=None %}
+{% endif %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-12 column">
+                        <h2>
+                            Formulário de criaturas
+                        </h2>{#
+    papelP=ndb.KeyProperty( required=True)
+    papelS=ndb.KeyProperty()#}
+
+                        <form action="{{ salvar_path }}" method="post" role="form">
+                            {{  csrf_input() }}
+                            {{ form_input('Nome','name',campeao.name,erros.name) }}
+                            {{ form_input('Caminho Imagem','image',campeao.image,erros.image) }}
+                            {{ form_input('Titulo','title',campeao.title,erros.title) }}
+                            {{ form_input('Vida','hp',campeao.hp,erros.hp) }}
+                            {{ form_input('Barra Secuandaria','barra',campeao.barra,erros.barra) }}
+                            {{ form_input('Vida Regen','hpregen',campeao.hpregen,erros.hpregen) }}
+                            {{ form_input('Alcance','range',campeao.range,erros.range) }}
+                            {{ form_input('Tipo Ataque','ataqueT',campeao.ataqueT,erros.ataqueT) }}
+                            {{ form_input('Dano','damage',campeao.damage,erros.damage) }}
+                            {{ form_input('VelAtk','atksp',campeao.atksp,erros.atksp) }}
+                            {{ form_input('Armadura','armor',campeao.armor,erros.armor) }}
+                            {{ form_input('ResisMagica','magicres',campeao.magicres,erros.magicres) }}
+                            {{ form_input('Movimento','movesp',campeao.movesp,erros.movesp) }}
+                            Papel Primario:
+                            <select name="papelP" required>
+                                {% for camPapel in camPapelL %}
+                                    <option value="{{ camPapel.key.id() }} "
+                                            {% if camPapel.name|string() == papelP.name|string %}selected{% endif %}>
+                                        {{ camPapel.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <br/>
+                            Papel Secundario
+                            <select name="papelS" required>
+                                {% for camPapel in camPapelL %}
+                                    <option value="{{ camPapel.key.id() }}"
+                                            {% if camPapel.name == papelS.name %}selected{% endif %}>
+                                        {{ camPapel.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+    </div>
+{% endblock %}

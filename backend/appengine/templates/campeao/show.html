@@ -10,13 +10,13 @@
             <div class="col-sm-8 item-block">
                 <div class="row">
                     <div class="col-sm-3 column">
-                        <img alt="140x140" src="/static/img/champions.png" class="img-mid img-responsive">
+                        <img alt="140x140" src="/static/img/{{ campeao.image }}" class="img-mid img-responsive">
                     </div>
                     <div class="col-sm-9 column">
                         <h2>
-                            Nome do Campeão
+                            {{ campeao.name }}
                         </h2>
-                        subtitulo
+                        {{ campeao.title }}
                         <br/>
 
                         <div class="row texto_desc">
@@ -32,13 +32,13 @@
                         </div>
                         <div class="row texto_desc">
                             <div class="col-sm-4 column">
-                                Descrição
+                                {{ papelP.name }}
                             </div>
                             <div class="col-sm-4 column">
-                                Descrição
+                                {{ papelS.name }}
                             </div>
                             <div class="col-sm-4 column">
-                                Descrição
+                                {{ campeao.barra }}
                             </div>
                         </div>
 
@@ -49,7 +49,7 @@
                                 Vida:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.hp }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -57,31 +57,16 @@
                                 Vida Regen:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.hpregen }}
                             </div>
                         </div>
-                        <div class="row texto_desc">
-                            <div class="col-sm-3 column">
-                                Mana:
-                            </div>
-                            <div class="col-sm-9 column">
-                                50
-                            </div>
-                        </div>
-                        <div class="row texto_desc">
-                            <div class="col-sm-3 column">
-                                Mana Regen:
-                            </div>
-                            <div class="col-sm-9 column">
-                                50
-                            </div>
-                        </div>
+
                         <div class="row texto_desc">
                             <div class="col-sm-3 column">
                                 Tipo de Ataque:
                             </div>
                             <div class="col-sm-9 column">
-                                Range/Melee
+                                {{ campeao.ataqueT }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -89,7 +74,7 @@
                                 Range:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.range }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -97,7 +82,7 @@
                                 Velocidade de Ataque:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.atksp }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -105,7 +90,7 @@
                                 Ataque:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.damage }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -113,7 +98,7 @@
                                 Armadura:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.armor }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -121,7 +106,7 @@
                                 Resistencia Magica:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.magicres }}
                             </div>
                         </div>
                         <div class="row texto_desc">
@@ -129,7 +114,7 @@
                                 Movimento:
                             </div>
                             <div class="col-sm-9 column">
-                                50
+                                {{ campeao.movesp }}
                             </div>
                         </div>
 

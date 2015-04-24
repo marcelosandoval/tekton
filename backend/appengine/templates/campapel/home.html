@@ -1,15 +1,12 @@
 {% extends 'base/baselista.html' %}
-{% block tComp %} - Criaturas{% endblock %}
+{% block tComp %} - Papel de Campeão{% endblock %}
 
-{% block imagem %}<img alt="140x140" src="/static/img/creatures.png" class=" img-responsive">{% endblock %}
-{% block titulo %}Criaturas{% endblock %}
+{% block imagem %}<img alt="140x140" src="/static/img/role.png" class=" img-responsive">{% endblock %}
+{% block titulo %}Papel de Campeão{% endblock %}
 {% block descricao %}
-    Para conseguir escalar seu poder dentro do jogo e garantir uma vitória você deve conhecer todas
-    as criaturas da selva, seus atributos, buffs e tempo de respawn, assim optimizando suas rotas
-    por entre a selva  e garantindo grando objetivos.<br/>
     {% if _logged_user and 'ADMIN' in _logged_user.groups %}
-    <a class="btn btn-info" href="/criatura/show/form">
-    Criar nova criatura
+    <a class="btn btn-info" href="/campapel/show/form">
+    Criar novo papel
     </a>
     {% endif%}
 {% endblock %}
@@ -17,30 +14,29 @@
 
 {% block Listagem %}
 
-    {% for criatura in criaturaL %}
+    {% for camPapel in camPapelL %}
         <div class="row">
         <div class="col-sm-4 col-sm-offset-2">
 
             <div class="row item-block">
-                <div class="col-sm-3 column">
-                    <a href="/criatura/show/{{ criatura.key.id() }}"><img alt="140x140" src="/static/img/{{ criatura.image }}"
-                                                             class="img-hab img-responsive"></a>
+                <div class="col-sm-3 column"><img alt="140x140" src="/static/img/{{ camPapel.image }}"
+                                                             class="img-hab img-responsive">
                 </div>
                 <div class="col-sm-9 column">
-                    <h3><a href="/criatura/show/{{ criatura.key.id() }}">
-                        {{ criatura.name }}</a>
+                    <h3>
+                        {{ camPapel.name }}
                         {% if _logged_user and 'ADMIN' in _logged_user.groups %}
                         <br/>
                         <table>
                             <tr>
                                 <td>
-                                    <a class="btn btn-success" href="/criatura/show/editar_form/{{ criatura.key.id() }}">
+                                    <a class="btn btn-success" href="/campapel/show/editar_form/{{ camPapel.key.id() }}">
                             <i class="glyphicon glyphicon-pencil"></i>
                         </a>
                                 </td>
                                 <td>
 
-                        <form action="/criatura/show/deletar/{{ criatura.key.id() }}" method="post">
+                        <form action="/campapel/show/deletar/{{ camPapel.key.id() }}" method="post">
                             {{ csrf_input() }}
                             <button class="btn btn-danger">
                                 <i class="glyphicon glyphicon-trash"></i>

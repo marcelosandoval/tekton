@@ -62,7 +62,7 @@ def editar(criatura_id,**prop):
     criaturaF=CriaturaForm(**prop)
     erros=criaturaF.validate()
     if erros:
-        contexto={'salvar_path':router.to_path(salvar),
+        contexto={'salvar_path':router.to_path(editar),
                   'erros':erros,
                   'criatura':criaturaF}
         return TemplateResponse(contexto,'criatura/form.html')

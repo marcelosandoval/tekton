@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% block tComp %}Form camPapels{% endblock %}
+{% if camPapel is undefined%}
+    {% set camPapel=None %}
+{% endif %}
+{% if erros is undefined%}
+    {% set erros=None %}
+{% endif %}
+{% block body %}
+    <div class="container">
+
+        <div class="row clearfix">
+            <div class="col-sm-2 column">
+            </div>
+            <div class="col-sm-8 column">
+                <div class="row item-block">
+                    <div class="col-sm-12 column">
+                        <h2>
+                            Formulário de camPapels
+                        </h2>
+
+                        <form action="{{ salvar_path }}" method="post" role="form">
+                            {{  csrf_input() }}
+                            {{ form_input('Nome','name',camPapel.name,erros.name) }}
+                            {{ form_input('Caminho Imagem','image',camPapel.image,erros.image) }}
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 column">
+            </div>
+        </div>
+    </div>
+{% endblock %}
