@@ -1,6 +1,8 @@
 {% extends 'base/baselista.html' %}
 {% block tComp %} - Papel de Campeão{% endblock %}
-
+{% if camPapel is undefined%}
+    {% set camPapel=None %}
+{% endif %}
 {% block imagem %}<img alt="140x140" src="/static/img/role.png" class=" img-responsive">{% endblock %}
 {% block titulo %}Papel de Campeão{% endblock %}
 {% block descricao %}

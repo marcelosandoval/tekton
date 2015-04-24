@@ -1,6 +1,8 @@
 {% extends 'base/baselista.html' %}
 {% block tComp %} - Criaturas{% endblock %}
-
+{% if criatura is undefined%}
+    {% set criatura=None %}
+{% endif %}
 {% block imagem %}<img alt="140x140" src="/static/img/creatures.png" class=" img-responsive">{% endblock %}
 {% block titulo %}Criaturas{% endblock %}
 {% block descricao %}

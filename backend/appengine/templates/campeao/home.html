@@ -5,6 +5,10 @@
     {% set camPapelL=None %}
 {% endif %}
 
+{% if campeao is undefined%}
+    {% set campeao=None %}
+{% endif %}
+
 {% block imagem %}<img alt="140x140" src="/static/img/champions.png" class="img-mid img-responsive">
 {% endblock %}
 {% block titulo %}Campeões{% endblock %}
