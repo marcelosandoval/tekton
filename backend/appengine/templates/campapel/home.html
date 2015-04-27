@@ -6,11 +6,11 @@
 {% block imagem %}<img alt="140x140" src="/static/img/role.png" class=" img-responsive">{% endblock %}
 {% block titulo %}Papel de Campeão{% endblock %}
 {% block descricao %}
-    {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+    {# {% if _logged_user and 'ADMIN' in _logged_user.groups %}#}
     <a class="btn btn-info" href="/campapel/show/form">
     Criar novo papel
     </a>
-    {% endif%}
+    {# {% endif%}#}
 {% endblock %}
 
 
@@ -27,7 +27,7 @@
                 <div class="col-sm-9 column">
                     <h3>
                         {{ camPapel.name }}
-                        {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+                        {#  {% if _logged_user and 'ADMIN' in _logged_user.groups %}#}
                         <br/>
                         <table>
                             <tr>
@@ -47,7 +47,7 @@
                                 </td>
                             </tr>
                         </table>
-                        {% endif %}
+                        {# {% endif %} #}
                     </h3>
                 </div>
             </div>

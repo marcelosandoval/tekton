@@ -13,12 +13,14 @@ from tekton.gae.middleware.redirect import RedirectResponse
 from routes.campapel.modelo import CamPapel, CamPapelForm
 
 
+@login_not_required
 @no_csrf
 def form(_resp):
     contexto={'salvar_path':router.to_path(salvar)}
     return TemplateResponse(contexto,'campapel/form.html')
 
 
+@login_not_required
 def salvar(**prop):
 
     camPapelF=CamPapelForm(**prop)
@@ -35,6 +37,7 @@ def salvar(**prop):
         return RedirectResponse(returnIndex())
 
 
+@login_not_required
 @no_csrf
 def editar_form(camPapel_id):
     camPapel_id=int(camPapel_id)
@@ -43,6 +46,7 @@ def editar_form(camPapel_id):
     return TemplateResponse(contexto,template_path='campapel/form.html')
 
 
+@login_not_required
 def editar(camPapel_id,**prop):
 
     camPapel_id=int(camPapel_id)
@@ -61,6 +65,7 @@ def editar(camPapel_id,**prop):
         camPapel.put()
         return RedirectResponse(router.to_path(returnIndex()))
 
+@login_not_required
 def deletar(camPapel_id):
     chave=ndb.Key(CamPapel,int(camPapel_id))
     chave.delete()

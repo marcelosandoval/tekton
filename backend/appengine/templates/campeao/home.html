@@ -16,11 +16,15 @@
     Veja informações e dados sobre os campeões de League of Legends, sempre atualizados com o último
     patch do servidor live. Aqui se encontram os atributos dos campões, descrições de suas habilidades,
     assim como varias informações e curiosidades.
-    {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+    {# {% if _logged_user and 'ADMIN' in _logged_user.groups %}#}
+    <br/>
+    <a class="btn btn-info" href="/campapel">
+    Acessar papeis de campeão
+    </a>
     <a class="btn btn-info" href="/campeao/show/form">
     Criar novo campeao
     </a>
-    {% endif%}
+    {# {% endif %} #}
 {% endblock %}
 
 {% block barFiltro %}
@@ -56,7 +60,7 @@
                     <p>
                         {{ campeao.title }}
                     </p>
-                    {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+                    {# {% if _logged_user and 'ADMIN' in _logged_user.groups %}#}
                         <br/>
                         <table>
                             <tr>
@@ -76,7 +80,7 @@
                                 </td>
                             </tr>
                         </table>
-                        {% endif %}
+                        {# {% endif %} #}
                 </div>
             </div>
             {% endfor %}

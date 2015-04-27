@@ -27,6 +27,7 @@ def index(_resp,campeao_id):
 
 
 
+@login_not_required
 @no_csrf
 def form(_resp):
     query=CamPapel.query().order(CamPapel.name)
@@ -36,6 +37,7 @@ def form(_resp):
     return TemplateResponse(contexto,'campeao/form.html')
 
 
+@login_not_required
 def salvar(_resp,**prop):
 
     prop['papelP']=ndb.Key(CamPapel,int(prop['papelP']))
@@ -60,6 +62,7 @@ def salvar(_resp,**prop):
 
 
 
+@login_not_required
 @no_csrf
 def editar_form(campeao_id):
 
@@ -80,6 +83,7 @@ def editar_form(campeao_id):
     return TemplateResponse(contexto,template_path='campeao/form.html')
 
 
+@login_not_required
 def editar(campeao_id,**prop):
 
 
@@ -102,6 +106,7 @@ def editar(campeao_id,**prop):
         campeao.put()
         return RedirectResponse(router.to_path(returnIndex()))
 
+@login_not_required
 def deletar(campeao_id):
     chave=ndb.Key(Campeao,int(campeao_id))
     chave.delete()

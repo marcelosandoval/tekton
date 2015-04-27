@@ -24,12 +24,14 @@ def index(_resp,criatura_id):
 
 
 
+@login_not_required
 @no_csrf
 def form():
     contexto={'salvar_path':router.to_path(salvar)}
     return TemplateResponse(contexto,template_path='criatura/form.html')
 
 
+@login_not_required
 def salvar(**prop):
 
     criaturaF=CriaturaForm(**prop)
@@ -46,6 +48,7 @@ def salvar(**prop):
         return RedirectResponse(returnIndex())
 
 
+@login_not_required
 @no_csrf
 def editar_form(criatura_id):
     criatura_id=int(criatura_id)
@@ -54,6 +57,7 @@ def editar_form(criatura_id):
     return TemplateResponse(contexto,template_path='criatura/form.html')
 
 
+@login_not_required
 def editar(criatura_id,**prop):
 
     criatura_id=int(criatura_id)
@@ -72,6 +76,7 @@ def editar(criatura_id,**prop):
         criatura.put()
         return RedirectResponse(returnIndex())
 
+@login_not_required
 def deletar(criatura_id):
     chave=ndb.Key(Criatura,int(criatura_id))
     chave.delete()

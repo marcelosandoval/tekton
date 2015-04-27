@@ -9,11 +9,11 @@
     Para conseguir escalar seu poder dentro do jogo e garantir uma vitória você deve conhecer todas
     as criaturas da selva, seus atributos, buffs e tempo de respawn, assim optimizando suas rotas
     por entre a selva  e garantindo grando objetivos.<br/>
-    {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+    {# {% if _logged_user and 'ADMIN' in _logged_user.groups %}#}
     <a class="btn btn-info" href="/criatura/show/form">
     Criar nova criatura
     </a>
-    {% endif%}
+    {# {% endif %} #}
 {% endblock %}
 
 
@@ -31,7 +31,7 @@
                 <div class="col-sm-9 column">
                     <h3><a href="/criatura/show/{{ criatura.key.id() }}">
                         {{ criatura.name }}</a>
-                        {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+                        {# {% if _logged_user and 'ADMIN' in _logged_user.groups %}#}
                         <br/>
                         <table>
                             <tr>
@@ -51,7 +51,7 @@
                                 </td>
                             </tr>
                         </table>
-                        {% endif %}
+                        {# {% endif %} #}
                     </h3>
                 </div>
             </div>
