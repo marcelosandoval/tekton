@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from gaebusiness.business import CommandExecutionException
+from gaecookie.decorator import no_csrf
 from tekton.gae.middleware.json_middleware import JsonResponse
 from itens_app import itens_facade
 
-
+@no_csrf
 def index():
     cmd = itens_facade.list_items_cmd()
     item_list = cmd()
@@ -23,13 +24,9 @@ def edit(_resp, id, **item_properties):
     return _save_or_update_json_response(cmd, _resp)
 
 
-def delete(_resp, id):
-    cmd = itens_facade.delete_item_cmd(id)
-    try:
-        cmd()
-    except CommandExecutionException:
-        _resp.status_code = 500
-        return JsonResponse(cmd.errors)
+def delete(item_id):
+    itens_facade.delete_item_cmd(item_id)()
+
 
 
 def _save_or_update_json_response(cmd, _resp):

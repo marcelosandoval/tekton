@@ -3,9 +3,37 @@
     <script type="text/javascript" src="/static/angular/js/angular.min.js"></script>
     <script type="text/javascript" src="/static/itens/js/itens.js"></script>
     <script type="text/javascript">
-        var itensApp=angular.module('itensApp',['itensModulo']);
-        function ItemController($scope){
+        var rest = angular.module('rest',[]);
+        rest.factory('ItemApi',function($http){
+            return {
+                salvar: function(item){
+                    return $http.post('{{ rest_new_path }}',item);
+                },
+                deletar: function(item_id){
+                    return $http.post('{{ rest_delete_path }}',{item_id:item_id});
+                },
+                listar: function(){
+                    return $http.post('{{ rest_list_path }}');
+                }
+            };
+        });
 
+        var itensApp=angular.module('itensApp',['itensModulo','rest']);
+        function ItemController($scope,ItemApi){
+            $scope.removerItem=function(item){
+                var itemLista = $scope.itemLista;
+                for(var i = 0;i<itemLista.length;i+=1){
+                    if(item.id==itemLista[i].id) {
+                        itemLista.splice(i, 1);
+                        break;
+                    }
+
+                }
+            };
+
+            $scope.adicionarItem=function(item){
+                $scope.itemLista.unshift(item)
+            };
             $scope.item={nome : 'nome',
                         tipo : 'tipo',
                         bonus : 'bonus',
@@ -17,6 +45,12 @@
                     };
 
             $scope.mostrarFormFlag=false;
+            $scope.listandoFlag=true;
+            $scope.itemLista=[];
+            ItemApi.listar().success(function(items){
+                $scope.itemLista=items;
+                $scope.listandoFlag=false;
+            });
 
             $scope.mostrarEsconderForm=function(){
                 $scope.mostrarFormFlag=!$scope.mostrarFormFlag;
@@ -32,7 +66,7 @@
                 <h1>{% trans %}This is a generic home for itens_app {% endtrans %}  </h1>
                 <button class="btn btn-success" ng-click="mostrarEsconderForm()">Create New Item</button>
                 <br/><br/><br/>
-                <itensform ng-show="mostrarFormFlag" item="item"></itensform>
+                <itensform ng-show="mostrarFormFlag" item="item" save-complete="adicionarItem(item)"></itensform>
                 <hr/>
                 <h2>{% trans %}List of Items{% endtrans %}</h2>
                 <table class="table table-striped table-hover">
@@ -52,31 +86,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for item in items %}
-                        <tr>
-                            <td><a href="{{ item.edit_path }}" class="btn btn-success btn-sm"><i
-                                    class="glyphicon glyphicon-pencil"></i></a></td>
-                            <td>{{ item.id }}</td>
-                            <td>{{ item.creation }}</td>
-                            <td>{{ item.tipo }}</td>
-                            <td>{{ item.nome }}</td>
-                            <td>{{ item.bonus }}</td>
-                            <td>{{ item.ativa }}</td>
-                            <td>{{ item.passiva }}</td>
-                            <td>{{ item.aura }}</td>
-                            <td>{{ item.vlrVenda }}</td>
-                            <td>{{ item.vlrCompra }}</td>
-                            <td>
-                                <form action="{{ item.delete_path }}" method="post" onsubmit="return confirm('{{_('Are you sure to delete? Press cancel to avoid deletion.')}}');">
-                                    {{ csrf_input() }}
-                                    <button class="btn btn-danger btn-sm"><i
-                                            class="glyphicon glyphicon-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    {% endfor %}
+
+                    <tr itenslinha ng-repeat="i in itemLista" item="i" delete-complete="removerItem(item)"></tr>
+
                     </tbody>
                 </table>
+            <img src="/static/img/ajax.gif" ng-show="listandoFlag"/>
             </div>
         </div>
     </div>
