@@ -49,12 +49,38 @@ itensModulo.directive('itenslinha',function(){
         },
         controller:function($scope,ItemApi){
             $scope.ajaxFlag=false;
+            $scope.editandoFlag=false;
+            $scope.itemEdicao={};
             $scope.deletar=function(){
                 ItemApi.deletar($scope.item.id).success(function(){
                     $scope.ajaxFlag=true;
                     $scope.deleteComplete({'item':$scope.item});
                 });
-            }
+            };
+
+            $scope.editar=function(){
+                $scope.editandoFlag=true;
+                $scope.itemEdicao.id=$scope.item.id;
+                $scope.itemEdicao.nome=$scope.item.nome;
+                $scope.itemEdicao.tipo=$scope.item.tipo;
+                $scope.itemEdicao.bonus=$scope.item.bonus;
+                $scope.itemEdicao.passiva=$scope.item.passiva;
+                $scope.itemEdicao.ativa=$scope.item.ativa;
+                $scope.itemEdicao.aura =$scope.item.aura;
+                $scope.itemEdicao.vlrCompra=$scope.item.vlrCompra;
+                $scope.itemEdicao.vlrVenda= $scope.item.vlrVenda;
+            };
+            $scope.cancelar=function(){
+                $scope.editandoFlag=false;
+            };
+            $scope.completarEdicao=function(){
+                ItemApi.editar($scope.itemEdicao).success(function(item){
+                    $scope.item=item;
+                    $scope.editandoFlag=false;
+                });
+
+            };
+
         }
     };
 });

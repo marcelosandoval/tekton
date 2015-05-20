@@ -19,8 +19,8 @@ def new(_resp, **item_properties):
     return _save_or_update_json_response(cmd, _resp)
 
 
-def edit(_resp, id, **item_properties):
-    cmd = itens_facade.update_item_cmd(id, **item_properties)
+def edit(_resp, item_id, **item_properties):
+    cmd = itens_facade.update_item_cmd(item_id, **item_properties)
     return _save_or_update_json_response(cmd, _resp)
 
 

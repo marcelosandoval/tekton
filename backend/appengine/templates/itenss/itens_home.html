@@ -14,6 +14,17 @@
                 },
                 listar: function(){
                     return $http.post('{{ rest_list_path }}');
+                },
+                editar: function(item){
+                    return $http.post('{{ rest_edit_path }}',{item_id:item.id,
+                                                                nome :item.nome,
+                                                                tipo : item.tipo,
+                                                                bonus : item.bonus,
+                                                                passiva : item.passiva,
+                                                                ativa : item.ativa,
+                                                                aura : item.aura,
+                                                                vlrCompra : item.vlrCompra,
+                                                                vlrVenda : item.vlrVenda});
                 }
             };
         });
@@ -30,6 +41,7 @@
 
                 }
             };
+
 
             $scope.adicionarItem=function(item){
                 $scope.itemLista.unshift(item)
@@ -73,8 +85,6 @@
                     <thead>
                     <tr>
                         <th/>
-                        <th>{% trans %}Id{% endtrans %}</th>
-                        <th>{% trans %}Creation{% endtrans %}</th>
                         <th>{% trans %}Tipo{% endtrans %}</th>
                         <th>{% trans %}Nome{% endtrans %}</th>
                         <th>{% trans %}Bonus{% endtrans %}</th>
@@ -83,6 +93,8 @@
                         <th>{% trans %}Aura{% endtrans %}</th>
                         <th>{% trans %}VlrVenda{% endtrans %}</th>
                         <th>{% trans %}VlrCompra{% endtrans %}</th>
+                        <th>{% trans %}Creation{% endtrans %}</th>
+                        <th>{% trans %}Id{% endtrans %}</th>
                     </tr>
                     </thead>
                     <tbody>
