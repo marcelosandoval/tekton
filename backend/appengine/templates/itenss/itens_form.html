@@ -1,0 +1,30 @@
+{% extends 'itenss/itens_base.html' %}
+{% block body %}
+    {% set item=item or None %}
+    {% set errors=errors or None %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <br/>
+
+                <div class="well">
+                    <h1 class="text-center">{% trans %}Item Form{% endtrans %}</h1>
+
+                    <form action="{{ save_path }}" method="post" role="form">
+                        {{ csrf_input() }}
+                        {{ form_input(_('Tipo'),'tipo',item.tipo,errors.tipo) }}
+                        {{ form_input(_('Nome'),'nome',item.nome,errors.nome) }}
+                        {{ form_input(_('Bonus'),'bonus',item.bonus,errors.bonus) }}
+                        {{ form_input(_('Ativa'),'ativa',item.ativa,errors.ativa) }}
+                        {{ form_input(_('Passiva'),'passiva',item.passiva,errors.passiva) }}
+                        {{ form_input(_('Aura'),'aura',item.aura,errors.aura) }}
+                        {{ form_input(_('VlrVenda'),'vlrVenda',item.vlrVenda,errors.vlrVenda) }}
+                        {{ form_input(_('VlrCompra'),'vlrCompra',item.vlrCompra,errors.vlrCompra) }}
+                        <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
