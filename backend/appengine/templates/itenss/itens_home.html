@@ -1,4 +1,4 @@
-{% extends 'itenss/itens_base.html' %}
+{% extends 'base/baselista.html' %}
 {% block js %}
     <script type="text/javascript" src="/static/angular/js/angular.min.js"></script>
     <script type="text/javascript" src="/static/itens/js/itens.js"></script>
@@ -17,14 +17,14 @@
                 },
                 editar: function(item){
                     return $http.post('{{ rest_edit_path }}',{item_id:item.id,
-                                                                nome :item.nome,
-                                                                tipo : item.tipo,
-                                                                bonus : item.bonus,
-                                                                passiva : item.passiva,
-                                                                ativa : item.ativa,
-                                                                aura : item.aura,
-                                                                vlrCompra : item.vlrCompra,
-                                                                vlrVenda : item.vlrVenda});
+                        nome :item.nome,
+                        tipo : item.tipo,
+                        bonus : item.bonus,
+                        passiva : item.passiva,
+                        ativa : item.ativa,
+                        aura : item.aura,
+                        vlrCompra : item.vlrCompra,
+                        vlrVenda : item.vlrVenda});
                 }
             };
         });
@@ -47,14 +47,14 @@
                 $scope.itemLista.unshift(item)
             };
             $scope.item={nome : 'nome',
-                        tipo : 'tipo',
-                        bonus : 'bonus',
-                        passiva : 'passiva',
-                        ativa : 'ativa',
-                        aura : 'aura',
-                        vlrCompra : 1000,
-                        vlrVenda : 1000
-                    };
+                tipo : 'tipo',
+                bonus : 'bonus',
+                passiva : 'passiva',
+                ativa : 'ativa',
+                aura : 'aura',
+                vlrCompra : 1000,
+                vlrVenda : 1000
+            };
 
             $scope.mostrarFormFlag=false;
             $scope.listandoFlag=true;
@@ -71,40 +71,46 @@
         };
     </script>
 {% endblock %}
-{% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 well" ng-app="itensApp" ng-controller="ItemController">
-                <h1>{% trans %}This is a generic home for itens_app {% endtrans %}  </h1>
-                <button class="btn btn-success" ng-click="mostrarEsconderForm()">Create New Item</button>
-                <br/><br/><br/>
-                <itensform ng-show="mostrarFormFlag" item="item" save-complete="adicionarItem(item)"></itensform>
-                <hr/>
-                <h2>{% trans %}List of Items{% endtrans %}</h2>
-                <table class="table table-striped table-hover">
-                    <thead>
-                    <tr>
-                        <th/>
-                        <th>{% trans %}Tipo{% endtrans %}</th>
-                        <th>{% trans %}Nome{% endtrans %}</th>
-                        <th>{% trans %}Bonus{% endtrans %}</th>
-                        <th>{% trans %}Ativa{% endtrans %}</th>
-                        <th>{% trans %}Passiva{% endtrans %}</th>
-                        <th>{% trans %}Aura{% endtrans %}</th>
-                        <th>{% trans %}VlrVenda{% endtrans %}</th>
-                        <th>{% trans %}VlrCompra{% endtrans %}</th>
-                        <th>{% trans %}Creation{% endtrans %}</th>
-                        <th>{% trans %}Id{% endtrans %}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+{% block tComp %} - Itens{% endblock %}
+{% block imagem %}<img alt="140x140" src="/static/img/itens.png" class="img-mid img-responsive">{% endblock %}
+{% block titulo %}Itens{% endblock %}
+{% block descricao %}
+    Para aprofundar seu conhecimento sobre League of Legends é precisso conhecer os itens do jogo,
+    seus efeitos, atributos e custos. Dessa forma ficara muito mais facil decidir suas próximas
+    ações dentro da partida. Aqui estão disponiveis todas as informações em relação aos itens.
+{% endblock %}
 
-                    <tr itenslinha ng-repeat="i in itemLista" item="i" delete-complete="removerItem(item)"></tr>
+{% block Listagem %}
+    <div class="row">
+        <div class="col-md-12" ng-app="itensApp" ng-controller="ItemController">
+            <h1>{% trans %} {% endtrans %}  </h1>
+            <button class="btn btn-success" ng-click="mostrarEsconderForm()">cadastrar Novo Item</button>
+            <br/><br/><br/>
+            <itensform ng-show="mostrarFormFlag" item="item" save-complete="adicionarItem(item)"></itensform>
+            <hr/>
+            <h2>{% trans %} {% endtrans %}</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th/>
+                    <th>{% trans %}Tipo{% endtrans %}</th>
+                    <th>{% trans %}Nome{% endtrans %}</th>
+                    <th>{% trans %}Bonus{% endtrans %}</th>
+                    <th>{% trans %}Ativa{% endtrans %}</th>
+                    <th>{% trans %}Passiva{% endtrans %}</th>
+                    <th>{% trans %}Aura{% endtrans %}</th>
+                    <th>{% trans %}Valor Venda{% endtrans %}</th>
+                    <th>{% trans %}Valor Compra{% endtrans %}</th>
+                    <th>{% trans %}Id{% endtrans %}</th>
+                </tr>
+                </thead>
+                <tbody>
 
-                    </tbody>
-                </table>
+                <tr itenslinha ng-repeat="i in itemLista" item="i" delete-complete="removerItem(item)"></tr>
+
+                </tbody>
+            </table>
             <img src="/static/img/ajax.gif" ng-show="listandoFlag"/>
-            </div>
         </div>
     </div>
 {% endblock %}

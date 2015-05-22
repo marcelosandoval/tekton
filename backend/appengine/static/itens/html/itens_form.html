@@ -1,56 +1,56 @@
 <div class="well">
-                    <h1 class="text-center">Item Form</h1>
+    <h1 class="text-center">Formulário</h1>
 
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.tipo==null]">
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.tipo==null]">
         <label for="tipoInput" class="control-label">Tipo </label>
         <input id="tipoInput" type="text" class="form-control" ng-model="item.tipo">
-                                <span class="help-block" ng-show="errors.tipo">{{ errors.tipo }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.tipo">{{ errors.tipo }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.nome==null]">
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.nome==null]">
         <label for="nomeInput" class="control-label">Nome </label>
         <input id="nomeInput" type="text" class="form-control" ng-model="item.nome">
-                                <span class="help-block" ng-show="errors.nome">{{ errors.nome }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.nome">{{ errors.nome }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.bonus==null]">
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.bonus==null]">
         <label for="bonusInput" class="control-label">Bonus </label>
         <input id="bonusInput" type="text" class="form-control"  ng-model="item.bonus">
-                                <span class="help-block" ng-show="errors.bonus">{{ errors.bonus }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.bonus">{{ errors.bonus }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.passiva==null]">
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.ativa==null]">
         <label for="ativaInput" class="control-label">Ativa </label>
         <input id="ativaInput" type="text" class="form-control"  ng-model="item.ativa">
-                                <span class="help-block" ng-show="errors.passiva">{{ errors.passiva }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.ativa">{{ errors.ativa }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.passiva==null]">
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.passiva==null]">
         <label for="passivaInput" class="control-label">Passiva </label>
         <input id="passivaInput" type="text" class="form-control"  ng-model="item.passiva">
-                                <span class="help-block" ng-show="errors.passiva">{{ errors.passiva }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.passiva">{{ errors.passiva }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.aura==null]">
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.aura==null]">
         <label for="auraInput" class="control-label">Aura </label>
         <input id="auraInput" type="text" class="form-control" ng-model="item.aura">
-                                <span class="help-block" ng-show="errors.aura">{{ errors.aura }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.aura">{{ errors.aura }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.vlrVenda==null]">
-        <label for="vlrVendaInput" class="control-label">VlrVenda </label>
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.vlrVenda==null]">
+        <label for="vlrVendaInput" class="control-label">Valor Venda </label>
         <input id="vlrVendaInput" type="text" class="form-control"  ng-model="item.vlrVenda">
-                                <span class="help-block" ng-show="errors.vlrVenda">{{ errors.vlrVenda }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.vlrVenda">{{ errors.vlrVenda }}</span>
+    </div>
 
-                            <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.vlrCompra==null]">
-        <label for="vlrCompraInput" class="control-label">VlrCompra </label>
+    <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.vlrCompra==null]">
+        <label for="vlrCompraInput" class="control-label">Valor Compra </label>
         <input id="vlrCompraInput" type="text" class="form-control"  ng-model="item.vlrCompra">
-                                <span class="help-block" ng-show="errors.vlrCompra">{{ errors.vlrCompra }}</span>
-            </div>
+        <span class="help-block" ng-show="errors.vlrCompra">{{ errors.vlrCompra }}</span>
+    </div>
 
-                        <button type="submit" class="btn btn-success" ng-click="salvar() " ng-hide="salvandoFlag">Save</button>
+    <button type="submit" class="btn btn-success" ng-click="salvar() " ng-hide="salvandoFlag">Save</button>
     <img src="/static/img/ajax.gif" ng-show="salvandoFlag"/>
 
-                </div>
+</div>

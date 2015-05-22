@@ -1,28 +1,79 @@
-                        <tr>
-                            <td><button class="btn btn-success btn-sm" ng-hide="ajaxFlag || editandoFlag">
-                                <i class="glyphicon glyphicon-pencil" ng-click="editar()"></i>
-                            </button>
-                                <button class="btn btn-success btn-sm" ng-hide="ajaxFlag || !editandoFlag">
-                                <i class="glyphicon glyphicon-save" ng-click="completarEdicao()"></i>
-                            </button>
+<tr>
+    <td>
+        <button class="btn btn-success btn-sm" ng-hide="ajaxFlag || editandoFlag" ng-click="editar()">
+            <i class="glyphicon glyphicon-pencil"></i>
+        </button>
+        <button class="btn btn-success btn-sm" ng-hide="ajaxFlag || !editandoFlag" ng-click="completarEdicao()">
+            <i class="glyphicon glyphicon-save"></i>
+        </button>
 
-                                    <img src="/static/img/ajax.gif" ng-show="ajaxFlag"/></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.tipo }}</span><input type="text" class="form-control" ng-model="itemEdicao.tipo" ng-show=" editandoFlag"> </td>
-                            <td><span ng-hide=" editandoFlag">{{ item.nome }}</span><input type="text" class="form-control" ng-model="itemEdicao.nome" ng-show=" editandoFlag"></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.bonus }}</span><input type="text" class="form-control" ng-model="itemEdicao.bonus" ng-show=" editandoFlag"></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.ativa }}</span><input type="text" class="form-control" ng-model="itemEdicao.ativa" ng-show=" editandoFlag"></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.passiva }}</span><input type="text" class="form-control" ng-model="itemEdicao.passiva" ng-show=" editandoFlag"></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.aura }}</span><input type="text" class="form-control" ng-model="itemEdicao.aura" ng-show=" editandoFlag"></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.vlrVenda }}</span><input type="text" class="form-control" ng-model="itemEdicao.vlrVenda" ng-show=" editandoFlag"></td>
-                            <td><span ng-hide=" editandoFlag">{{ item.vlrCompra }}</span><input type="text" class="form-control" ng-model="itemEdicao.vlrCompra" ng-show=" editandoFlag"></td>
-                            <td>{{ item.creation }}</td>
-                            <td>{{ item.id }}</td>
-                            <td>
-                                <button class="btn btn-warning btn-sm" ng-hide="ajaxFlag || !editandoFlag">
-                                <i class="glyphicon glyphicon-remove" ng-click="cancelar()"></i>
-                            </button>
-                                    <button class="btn btn-danger btn-sm" ng-hide="ajaxFlag || editandoFlag" ng-click="deletar()">
-                                        <i class="glyphicon glyphicon-trash"></i></button>
-                                    <img src="/static/img/ajax.gif" ng-show="ajaxFlag"/>
-                            </td>
-                        </tr>
+        <img src="/static/img/ajax.gif" ng-show="ajaxFlag"/>
+    </td>
+
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.tipo }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.tipo==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.tipo" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.tipo"><h6>{{ errors.tipo }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.nome }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.nome==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.nome" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.nome"><h6>{{ errors.nome }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.bonus }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.bonus==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.bonus" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.bonus"><h6>{{ errors.bonus }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.ativa }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.ativa==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.ativa" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.ativa"><h6>{{ errors.ativa }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.passiva }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.passiva==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.passiva" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.passiva"><h6>{{ errors.passiva }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.aura }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.aura==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.aura" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.aura"><h6>{{ errors.aura }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.vlrVenda }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.vlrVenda==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.vlrVenda" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.vlrVenda"><h6>{{ errors.vlrVenda }}</h6></span>
+        </div>
+    </td>
+    <td>
+        <span ng-hide=" editandoFlag">{{ item.vlrCompra }}</span>
+        <div class="form-group " ng-class="{true:'',false:'has-error'}[errors.vlrCompra==null]">
+            <input type="text" class="form-control" ng-model="itemEdicao.vlrCompra" ng-show=" editandoFlag">
+            <span class="help-block" ng-show="errors.vlrCompra"><h6>{{ errors.vlrCompra }}</h6></span>
+        </div>
+    </td>
+    <td>{{ item.id }}</td>
+    <td>
+        <button class="btn btn-warning btn-sm" ng-hide="ajaxFlag || !editandoFlag" ng-click="cancelar()">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>
+        <button class="btn btn-danger btn-sm" ng-hide="ajaxFlag || editandoFlag" ng-click="deletar()">
+            <i class="glyphicon glyphicon-trash"></i>
+        </button>
+        <img src="/static/img/ajax.gif" ng-show="ajaxFlag"/>
+    </td>
+</tr>

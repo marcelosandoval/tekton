@@ -2,13 +2,14 @@
 from __future__ import absolute_import, unicode_literals
 import json
 from config.template_middleware import TemplateResponse
+from gaepermission.decorator import login_not_required
 from tekton import router
 from gaecookie.decorator import no_csrf
 from itens_app import itens_facade
 from routes.itenss import new, edit,rest
 from tekton.gae.middleware.redirect import RedirectResponse
 
-
+@login_not_required
 @no_csrf
 def index():
     context = {'rest_list_path': router.to_path(rest.index),
@@ -18,7 +19,7 @@ def index():
     }
     return TemplateResponse(context, 'itenss/itens_home.html')
 
-
+@login_not_required
 def delete(item_id):
     itens_facade.delete_item_cmd(item_id)()
 
