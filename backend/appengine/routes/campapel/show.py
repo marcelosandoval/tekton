@@ -28,7 +28,7 @@ def salvar(**prop):
     if erros:
         contexto={'salvar_path':router.to_path(salvar),
                   'erros':erros,
-                  'camPapel':camPapelF}
+                  'camPapel':prop}
         return TemplateResponse(contexto,'campapel/form.html')
 
     else:
