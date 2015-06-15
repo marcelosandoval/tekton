@@ -1,22 +1,46 @@
-{% extends 'base/base.html' %}
-{% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well">
-                    <h1>{% trans %}File Upload Form{% endtrans %}</h1>
+{% extends 'base/baselista.html' %}
 
-                    <form action="{{ upload_url }}" method="post" role="form" enctype="multipart/form-data">
-                        {{ csrf_input() }}
-                        <div class="form-group ">
-                            <label for="upInput"
-                                   class="control-label">{% trans %}Choose a file{% endtrans %}</label>
-                            <input id="upInput" type="file" name="files[]" multiple="multiple" class="form-control"/>
-                        </div>
-                        <button type="submit" class="btn btn-success">{% trans %}Upload{% endtrans %}</button>
-                    </form>
-                </div>
+
+{% block tComp %} - Melhores Scores{% endblock %}
+
+{% block imagem %}
+    <br/><br/>
+    Fazer upload do seu Score:
+<a class="btn btn-info" href="/updown/form">
+    <i class="glyphicon glyphicon-play"></i>
+</a>
+{% endblock %}
+
+{% block titulo %}Melhores Scores{% endblock %}
+{% block descricao %}
+    Aqui voce pode vizualizar as imagens compartilhadas de outros jogadores que contem as pontuações de suas ultimas
+    partidas onde tiveram um desempenho exmplar.
+    Mas se voce quiser compartilhar uma derrota tambem seja bem vindo!
+{% endblock %}
+
+
+
+
+{% block Listagem %}
+          {% for arq in arquivos %}
+            <div class="item-block">
+                <table class="table table-responsive" style="text-align: center">
+                    <tr>
+                        <td>
+                           <h3>Nome da Imagem :</h3> {{ arq.filename }}
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ arq.download_path }}">Download da Imagem <i class="glyphicon glyphicon-save"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+
+                            <img src="{{ arq.img(64) }}" style="height: auto; width:250px; margin-left: auto; margin-right: auto" />
+
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-    </div>
+          {% endfor %}
 {% endblock %}

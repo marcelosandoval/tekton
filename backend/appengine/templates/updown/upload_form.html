@@ -1,0 +1,28 @@
+{% extends 'base/baselista.html' %}
+
+
+{% block tComp %} - Upload de imagem{% endblock %}
+
+
+{% block titulo %}Formulário de Upload{% endblock %}
+
+
+
+
+
+{% block Listagem %}
+
+    <form action="{{ salvar_path }}" method="post" enctype="multipart/form-data">
+        <div class="row" style="text-align: center">
+            <div class="col-sm-3 col-sm-offset-4">
+                {{ csrf_input() }}
+                <input type="file" name="files" multiple="multiple"/>
+            </div>
+            <div class="col-sm-12">
+
+                <button class="btn btn-success" type="submit">Salvar</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
